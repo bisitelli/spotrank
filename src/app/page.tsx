@@ -1,100 +1,139 @@
-// app/page.tsx
+import React from "react";
 
-import { AiOutlineSearch, AiOutlineBarChart, AiOutlineSafety } from 'react-icons/ai';
-import { BsArrowRight } from 'react-icons/bs';
-
-// Components
-import Header from '@/app/components/Header';
-import FeatureCard from '@/app/components/FeatureCard';
-import ExplainerVideo from '@/app/components/ExplainerVideo';
-
-// Define the structure for feature data
-interface Feature {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const features: Feature[] = [
-  {
-    icon: AiOutlineSearch,
-    title: 'AI Visibility Tracking',
-    description: 'Monitor your presence across various AI platforms in real-time.',
-  },
-  {
-    icon: AiOutlineBarChart,
-    title: 'Performance Analytics',
-    description: 'Gain insights into your AI performance with detailed analytics and reporting.',
-  },
-  {
-    icon: AiOutlineSafety,
-    title: 'Security & Compliance',
-    description: 'Ensure your AI initiatives are secure and compliant with industry standards.',
-  },
-];
-
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+      {/* Header */}
+      <header className="border-b border-border-light dark:border-border-dark">
+        <div className="container mx-auto flex items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-3">
+            <div className="text-primary size-7">
+              <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 className="text-xl font-bold">SpotRank</h2>
+          </div>
+          <nav className="hidden md:flex items-center gap-8">
+            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Product</a>
+            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Solutions</a>
+            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
+            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+          </nav>
+          <button className="hidden md:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
+            Get Started
+          </button>
+          <button className="md:hidden p-2 rounded-lg hover:bg-primary/20">
+            <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
 
-      <main className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <section className="text-center mb-24">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
-            Boost Your AI Visibility
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-            Unlock the power of AI to drive growth. SpotRank helps you track and
-            improve your visibility across AI platforms, ensuring your business stands out.
-          </p>
-          <div className="flex justify-center">
-            <div className="flex w-full max-w-xl shadow-lg rounded-lg overflow-hidden">
-              <div className="flex items-center bg-white p-3 border-y border-l rounded-l-lg border-gray-200">
-                <AiOutlineSearch className="text-gray-400 w-5 h-5 ml-2" />
-                <input
-                  type="text"
-                  placeholder="Enter your website"
-                  className="w-full px-4 py-2 text-gray-700 focus:outline-none"
-                />
-              </div>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-4 rounded-r-lg transition duration-150 ease-in-out whitespace-nowrap">
+      {/* Hero Section */}
+      <main className="container mx-auto px-6 py-16 md:py-24">
+        <div className="flex flex-col items-center gap-12 text-center">
+          <div className="flex flex-col gap-6 items-center">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
+              Boost Your AI Visibility
+            </h1>
+            <p className="text-lg md:text-xl text-subtle-light dark:text-subtle-dark max-w-3xl">
+              Unlock the power of AI to drive growth. SpotRank helps you track and improve your visibility across AI platforms, ensuring your business stands out.
+            </p>
+          </div>
+
+          <div className="w-full max-w-2xl">
+            <form className="flex w-full items-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-border-light dark:border-border-dark p-2 shadow-md">
+              <svg className="text-subtle-light dark:text-subtle-dark mx-2" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+              <input
+                type="text"
+                placeholder="Enter your business name"
+                className="flex-1 border-none bg-transparent text-foreground-light dark:text-foreground-dark focus:outline-none focus:ring-0 text-base"
+              />
+              <button className="min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
                 Test Visibility
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Features */}
+        <div className="py-24 md:py-32">
+          <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Key Features</h2>
+              <p className="text-lg text-subtle-light dark:text-subtle-dark max-w-3xl mx-auto">
+                SpotRank offers a comprehensive suite of tools to help you succeed in the AI landscape.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Feature 1 */}
+              <div className="flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6 shadow-sm">
+                <div className="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
+                  <svg fill="currentColor" height="28px" viewBox="0 0 256 256" width="28px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-bold">AI Visibility Tracking</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">Monitor your presence across various AI platforms in real-time.</p>
+                </div>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6 shadow-sm">
+                <div className="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
+                  <svg fill="currentColor" height="28px" viewBox="0 0 256 256" width="28px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"></path>
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-bold">Performance Analytics</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">Gain insights into your AI performance with detailed analytics and reporting.</p>
+                </div>
+              </div>
+
+              {/* Feature 3 */}
+              <div className="flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6 shadow-sm">
+                <div className="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
+                  <svg fill="currentColor" height="28px" viewBox="0 0 256 256" width="28px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path>
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-bold">Security & Compliance</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">Ensure your AI initiatives are secure and compliant with industry standards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Explainer Video */}
+        <div className="flex flex-col items-center gap-6">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Watch Our Explainer Video</h2>
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
+            <img
+              alt="Explainer video thumbnail"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="/video-thumbnail.jpg"
+            />
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <button className="flex items-center justify-center size-20 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
+                <svg fill="currentColor" height="40px" viewBox="0 0 256 256" width="40px" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                </svg>
               </button>
             </div>
           </div>
-        </section>
-
-        <hr className="my-16 border-gray-100" />
-
-        {/* Key Features Section */}
-        <section className="mb-24">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-3">
-            Key Features
-          </h2>
-          <p className="text-lg text-gray-500 text-center mb-12">
-            SpotRank offers a comprehensive suite of tools to help you succeed in the AI landscape.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
-            ))}
-          </div>
-        </section>
-
-        <hr className="my-16 border-gray-100" />
-
-        {/* Explainer Video Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">
-            Watch Our Explainer Video
-          </h2>
-          <ExplainerVideo />
-        </section>
+        </div>
       </main>
-
-      {/* Optional: Add a Footer component here */}
     </div>
   );
 }
