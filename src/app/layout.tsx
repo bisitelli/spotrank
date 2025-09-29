@@ -40,13 +40,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   colors: {
                     primary: "#25aff4",
                     "background-light": "#f5f7f8",
-                    "background-dark": "#101c22",
                     "foreground-light": "#111618",
-                    "foreground-dark": "#f5f7f8",
                     "subtle-light": "#607c8a",
-                    "subtle-dark": "#a0b1bb",
                     "border-light": "#dbe2e6",
-                    "border-dark": "#344550",
                   },
                   fontFamily: {
                     display: ["Manrope", "sans-serif"],

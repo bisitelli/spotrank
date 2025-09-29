@@ -82,7 +82,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <h3 className="text-xl font-bold">AI Visibility Tracking</h3>
-                  <p className="text-subtle-light dark:text-subtle-dark">Monitor your presence across various AI platforms in real-time.</p>
+                  <p className="text-subtle-light dark:text-subtle-dark">Monitor how your business appears across leading AI platforms — stay visible where your customers search.</p>
                 </div>
               </div>
 
@@ -94,8 +94,8 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-bold">Performance Analytics</h3>
-                  <p className="text-subtle-light dark:text-subtle-dark">Gain insights into your AI performance with detailed analytics and reporting.</p>
+                  <h3 className="text-xl font-bold">Competitor Benchmarking</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">See how you stack up against direct competitors and discover where you can gain an advantage.</p>
                 </div>
               </div>
 
@@ -107,8 +107,8 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-bold">Security & Compliance</h3>
-                  <p className="text-subtle-light dark:text-subtle-dark">Ensure your AI initiatives are secure and compliant with industry standards.</p>
+                  <h3 className="text-xl font-bold">Actionable Recommendations</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">Get practical next steps you can implement right away to improve your AI visibility.</p>
                 </div>
               </div>
             </div>
