@@ -120,7 +120,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Explainer Video */}
+        {/* Explainer Video 
         <div className="flex flex-col items-center gap-6">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Watch Our Explainer Video</h2>
           <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
@@ -138,6 +138,7 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+        */}
       </main>
     </div>
   );

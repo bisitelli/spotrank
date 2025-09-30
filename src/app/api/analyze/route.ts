@@ -4,53 +4,62 @@ export async function POST(req: NextRequest) {
     try {
         const { companyName } = await req.json();
 
-        if (!companyName) {
-            return NextResponse.json({ error: "Company name is required" }, { status: 400 });
+        const openAiKey = process.env.OPENAI_API_KEY;
+        const googleKey = process.env.GOOGLE_API_KEY;
+
+        if (!openAiKey || !googleKey) {
+            console.error("API keys are undefined!");
+            return NextResponse.json({ error: "API keys not set" }, { status: 500 });
         }
 
-        // Prompt
-        const prompt = `Analyze what you know about the company "${companyName}".
-Summarize presence, strengths, weaknesses, and AI visibility. Keep it concise and business-friendly.`;
+        // Prompt suomalaiselle kontekstille
+        const prompt = `
+You are an AI visibility analyst.
+A user has provided the company name: "${companyName}".
+Assume this is a Finnish company.
+Without using a URL or exact location, assess the company's visibility in AI systems.
+Categorize visibility as High, Medium, or Low based on how much information AI-powered searches are likely to find about this company.
+Provide a short explanation for your rating.
+Return the result in JSON format like this:
+{
+    "company": "${companyName}",
+    "visibility": "<High/Medium/Low>",
+    "explanation": "<Your explanation here>"
+}
+`;
 
-        // --- Call OpenAI ---
+        // OpenAI fetch
         const openAiResp = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
             headers: {
-                Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${openAiKey}`,
             },
             body: JSON.stringify({
                 model: "gpt-4o-mini",
                 messages: [{ role: "user", content: prompt }],
             }),
         });
-
         const openAiData = await openAiResp.json();
-        const gptAnswer = openAiData?.choices?.[0]?.message?.content || "";
 
-        // --- Call Google Gemini ---
-        const geminiResp = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GOOGLE_API_KEY}`,
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }],
-                }),
-            }
-        );
-
+        // Gemini fetch (simuloitu esimerkki, oikea endpoint voi vaihdella)
+        const geminiResp = await fetch("https://api.gemini.com/v1/analyze", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${googleKey}`,
+            },
+            body: JSON.stringify({ companyName }),
+        });
         const geminiData = await geminiResp.json();
-        const geminiAnswer = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
-        // Return combined results
         return NextResponse.json({
             company: companyName,
-            openai: gptAnswer,
-            gemini: geminiAnswer,
+            openai: openAiData,
+            gemini: geminiData,
         });
-    } catch (error: any) {
-        console.error("Analyze API error:", error);
-        return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
+    } catch (err) {
+        console.error(err);
+        return NextResponse.json({ error: "Server error" }, { status: 500 });
     }
 }
