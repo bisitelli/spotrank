@@ -1,6 +1,29 @@
+"use client";
+
 import React from "react";
+import { useState } from "react";
+import { analyzeCompany } from "../../lib/analyzeCompany";
+
 
 export default function LandingPage() {
+  const [company, setCompany] = useState("");
+  const [report, setReport] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const data = await analyzeCompany(company);
+      setReport(data);
+    } catch (err) {
+      alert("Error fetching report");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
       {/* Header */}
@@ -46,7 +69,7 @@ export default function LandingPage() {
           </div>
 
           <div className="w-full max-w-2xl">
-            <form className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-border-light dark:border-border-dark p-2 shadow-md">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-border-light dark:border-border-dark p-2 shadow-md">
 
               <div className="flex items-center px-2">
                 <svg className="text-subtle-light dark:text-subtle-dark" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
@@ -56,11 +79,13 @@ export default function LandingPage() {
 
               <input
                 type="text"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
                 placeholder="Enter your business name"
                 className="flex-1 border-none bg-transparent text-foreground-light dark:text-foreground-dark focus:outline-none focus:ring-0 text-base px-2 py-2"
               />
 
-              <button className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
+              <button type="submit" className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
                 Test Visibility
               </button>
             </form>
@@ -120,7 +145,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Explainer Video 
+        {/* Explainer Video
         <div className="flex flex-col items-center gap-6">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Watch Our Explainer Video</h2>
           <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
@@ -141,5 +166,5 @@ export default function LandingPage() {
         */}
       </main>
     </div>
-  );
-}
+  )
+};
