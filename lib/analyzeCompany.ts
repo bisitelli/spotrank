@@ -1,6 +1,6 @@
 export async function analyzeCompany(companyName: string) {
     try {
-        const res = await fetch("http://localhost:5678/webhook/analyze-company", {
+        const res = await fetch("api/analyze", {  // nyt Next.js routea kutsutaan
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ companyName }),
@@ -17,3 +17,4 @@ export async function analyzeCompany(companyName: string) {
         throw err;
     }
 }
+
