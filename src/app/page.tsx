@@ -27,7 +27,7 @@ export default function LandingPage() {
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
       {/* Header */}
-      <header className="border-b border-border-light dark:border-border-dark">
+      <header className="">
         <div className="container mx-auto flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <div className="text-primary size-7">
@@ -37,12 +37,6 @@ export default function LandingPage() {
             </div>
             <h2 className="text-xl font-bold">SpotRank</h2>
           </div>
-          <nav className="hidden md:flex items-center gap-8">
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Product</a>
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Solutions</a>
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
-          </nav>
           <button className="hidden md:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
             Get Started
           </button>
@@ -63,8 +57,8 @@ export default function LandingPage() {
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
               Boost Your AI Visibility
             </h1>
-            <p className="text-lg md:text-xl text-subtle-light dark:text-subtle-dark max-w-3xl">
-              Unlock the power of AI to drive growth. SpotRank helps you track and improve your visibility across AI platforms, ensuring your business stands out.
+            <p className="text-lg md:text-xl text-subtle-light dark:text-subtle-dark max-w-xl">
+              Test your business’s AI visibility in seconds – and get actionable insights straight to your inbox, for free.
             </p>
           </div>
 
@@ -81,7 +75,7 @@ export default function LandingPage() {
                 type="text"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                placeholder="Enter your business URL"
+                placeholder="Enter your business website"
                 className="flex-1 border-none bg-transparent text-foreground-light dark:text-foreground-dark focus:outline-none focus:ring-0 text-base px-2 py-2"
               />
 
@@ -90,6 +84,9 @@ export default function LandingPage() {
               </button>
             </form>
           </div>
+        </div>
+        <div className="mt-2 text-sm text-subtle-light flex items-center justify-center">
+          No credit card required.
         </div>
 
         {/* Features */}
