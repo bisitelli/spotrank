@@ -38,7 +38,7 @@ export default function LandingPage() {
             <h2 className="text-xl font-bold">SpotRank</h2>
           </div>
           <button className="hidden md:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
-            Get Started
+            Ota yhteyttä
           </button>
           <button className="md:hidden p-2 rounded-lg hover:bg-primary/20">
             <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -55,10 +55,10 @@ export default function LandingPage() {
         <div className="flex flex-col items-center gap-12 text-center">
           <div className="flex flex-col gap-6 items-center">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
-              Boost Your AI Visibility
+              Näy paremmin tekoälylle
             </h1>
             <p className="text-lg md:text-xl text-subtle-light dark:text-subtle-dark max-w-xl">
-              Test your business’s AI visibility in seconds – and get actionable insights straight to your inbox, for free.
+              Testaa yrityksesi näkyvyyttä sekunneissa – ja saa selville, miten brändisi näkyy tekoälyalustoilla.
             </p>
           </div>
 
@@ -80,22 +80,20 @@ export default function LandingPage() {
               />
 
               <button type="submit" className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
-                Test Visibility
+                Aloita nyt
               </button>
             </form>
           </div>
         </div>
-        <div className="mt-2 text-sm text-subtle-light flex items-center justify-center">
-          No credit card required.
-        </div>
+
 
         {/* Features */}
         <div className="py-24 md:py-32">
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Key Insights</h2>
-              <p className="text-lg text-subtle-light dark:text-subtle-dark max-w-3xl mx-auto">
-                SpotRank offers a comprehensive suite of tools to help you succeed in the AI landscape.
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Näkyvyytesi seuraavalle tasolle</h2>
+              <p className="text-lg text-subtle-light dark:text-subtle-dark max-w-1xl mx-auto">
+                SpotRank yhdistää älykkäät työkalut, joilla kehität näkyvyyttäsi tekoälyssä ja erotut kilpailijoista.
               </p>
             </div>
 
@@ -108,8 +106,8 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-bold">AI Visibility Tracking</h3>
-                  <p className="text-subtle-light dark:text-subtle-dark">Monitor how your business appears across leading AI platforms — stay visible where your customers search.</p>
+                  <h3 className="text-xl font-bold">Seuraa tekoälynäkyvyyttäsi</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">Katso, missä yrityksesi näkyy tekoälyalustoilla ja pysy asiakkaidesi ulottuvilla.</p>
                 </div>
               </div>
 
@@ -121,8 +119,8 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-bold">Competitor Benchmarking</h3>
-                  <p className="text-subtle-light dark:text-subtle-dark">See how you stack up against direct competitors and discover where you can gain an advantage.</p>
+                  <h3 className="text-xl font-bold">Vertaa kilpailijoihin</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">Näe, miten sijoitut suoraan kilpailijoihisi nähden ja löydä uusia kasvumahdollisuuksia.</p>
                 </div>
               </div>
 
@@ -134,8 +132,8 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-bold">Actionable Recommendations</h3>
-                  <p className="text-subtle-light dark:text-subtle-dark">Get practical next steps you can implement right away to improve your AI visibility.</p>
+                  <h3 className="text-xl font-bold">Käytännön suositukset</h3>
+                  <p className="text-subtle-light dark:text-subtle-dark">Saat heti toteutettavia suosituksia, joilla kasvatat näkyvyyttäsi tekoälyhauissa.</p>
                 </div>
               </div>
             </div>
