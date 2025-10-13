@@ -3,6 +3,7 @@
 import React from "react";
 import { useState } from "react";
 import { analyzeCompany } from "../../lib/analyzeCompany";
+import LogoStrip from "../app/components/logoStrip";
 
 
 export default function LandingPage() {
@@ -58,7 +59,7 @@ export default function LandingPage() {
               Näy paremmin tekoälylle
             </h1>
             <p className="text-lg md:text-xl text-subtle-light dark:text-subtle-dark max-w-xl">
-              Testaa yrityksesi näkyvyyttä sekunneissa – ja saa selville, miten brändisi näkyy tekoälyalustoilla.
+              Testaa yrityksesi näkyvyyttä sekunneissa – ja saa selville, miten brändisi näkyy johtavilla tekoälyalustoilla.
             </p>
           </div>
 
@@ -85,6 +86,8 @@ export default function LandingPage() {
             </form>
           </div>
         </div>
+
+        <LogoStrip />
 
 
         {/* Features */}
