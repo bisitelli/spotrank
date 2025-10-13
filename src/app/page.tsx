@@ -75,7 +75,7 @@ export default function LandingPage() {
                 type="text"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                placeholder="Enter your business website"
+                placeholder="Syötä yrityksesi URL"
                 className="flex-1 border-none bg-transparent text-foreground-light dark:text-foreground-dark focus:outline-none focus:ring-0 text-base px-2 py-2"
               />
 
