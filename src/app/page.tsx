@@ -91,7 +91,7 @@ export default function LandingPage() {
 
 
         {/* Features */}
-        <div className="mt-16">
+        <div className="mt-8 md:mt-16">
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-4 text-center">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vie näkyvyytesi seuraavalle tasolle</h2>

@@ -3,13 +3,13 @@ import React from "react";
 
 export default function LogoStrip() {
     const logos = [
-        { src: "/logos/openai.svg", alt: "ChatGPT" },
-        { src: "/logos/googlegemini.svg", alt: "Gemini" },
-        { src: "/logos/claude.svg", alt: "Claude" },
-        { src: "/logos/perplexity.svg", alt: "Perplexity" },
+        { src: "/logos/openai.svg", alt: "ChatGPT", color: "#412991" },
+        { src: "/logos/googlegemini.svg", alt: "Gemini", color: "#8E75B2" },
+        { src: "/logos/claude.svg", alt: "Claude", color: "#D97757" },
+        { src: "/logos/perplexity.svg", alt: "Perplexity", color: "#1FB8CD" },
         { src: "/logos/githubcopilot.svg", alt: "Microsoft Copilot" },
-        { src: "/logos/meta.svg", alt: "Meta AI" },
-        { src: "/logos/mistralai.svg", alt: "Mistral" },
+        { src: "/logos/meta.svg", alt: "Meta AI", color: "#0467DF" },
+        { src: "/logos/mistralai.svg", alt: "Mistral", color: "#FA520F" },
     ];
 
     return (
@@ -27,11 +27,18 @@ export default function LogoStrip() {
                             key={logo.src}
                             className="flex items-center justify-center w-28 h-16"
                         >
-                            <img
-                                src={logo.src}
-                                alt={logo.alt}
-                                className="max-h-10 object-contain"
-                                loading="lazy"
+                            <div
+                                className="w-28 h-16 max-h-10 object-contain transition-all duration-300"
+                                style={{
+                                    WebkitMask: `url(${logo.src}) no-repeat center`,
+                                    mask: `url(${logo.src}) no-repeat center`,
+                                    WebkitMaskSize: "contain",
+                                    maskSize: "contain",
+                                    backgroundColor: "#000",
+                                    transition: "background-color 0.3s",
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = logo.color ?? "#000")}
+                                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#000")}
                             />
                         </div>
                     ))}
