@@ -3,11 +3,10 @@ import React from "react";
 
 export default function LogoStrip() {
     const logos = [
-        { src: "/logos/openai.svg", alt: "ChatGPT", color: "#412991" },
+        { src: "/logos/openai.svg", alt: "ChatGPT", color: "#74AA9C" },
         { src: "/logos/googlegemini.svg", alt: "Gemini", color: "#8E75B2" },
         { src: "/logos/claude.svg", alt: "Claude", color: "#D97757" },
         { src: "/logos/perplexity.svg", alt: "Perplexity", color: "#1FB8CD" },
-        { src: "/logos/githubcopilot.svg", alt: "Microsoft Copilot" },
         { src: "/logos/meta.svg", alt: "Meta AI", color: "#0467DF" },
         { src: "/logos/mistralai.svg", alt: "Mistral", color: "#FA520F" },
     ];

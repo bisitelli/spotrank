@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { analyzeCompany } from "../../lib/analyzeCompany";
 import LogoStrip from "../app/components/logoStrip";
+import FaqComponent from "../app/components/faqComponent";
 
 
 export default function LandingPage() {
@@ -59,7 +60,7 @@ export default function LandingPage() {
               Näy paremmin tekoälylle
             </h1>
             <p className="text-lg md:text-xl text-subtle-light dark:text-subtle-dark max-w-xl">
-              Testaa yrityksesi näkyvyyttä sekunneissa – ja saa selville, miten brändisi näkyy johtavilla tekoälyalustoilla.
+              Testaa yrityksesi näkyvyys sekunneissa – ja selvitä, miten brändisi näkyy johtavilla tekoälyalustoilla.
             </p>
           </div>
 
@@ -91,7 +92,7 @@ export default function LandingPage() {
 
 
         {/* Features */}
-        <div className="mt-8 md:mt-16">
+        <div className="mt-12 md:mt-24">
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-4 text-center">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vie näkyvyytesi seuraavalle tasolle</h2>
@@ -142,6 +143,8 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+
+        <FaqComponent />
 
         {/* Explainer Video
         <div className="flex flex-col items-center gap-6">
