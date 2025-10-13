@@ -91,7 +91,7 @@ export default function LandingPage() {
         <div className="py-24 md:py-32">
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Näkyvyytesi seuraavalle tasolle</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vie näkyvyytesi seuraavalle tasolle</h2>
               <p className="text-lg text-subtle-light dark:text-subtle-dark max-w-1xl mx-auto">
                 SpotRank yhdistää älykkäät työkalut, joilla kehität näkyvyyttäsi tekoälyssä ja erotut kilpailijoista.
               </p>
