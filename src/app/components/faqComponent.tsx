@@ -38,7 +38,7 @@ export default function FAQ() {
                     <div key={index} className="border border-border-light rounded-lg overflow-hidden">
                         <button
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                            className="w-full text-left px-4 py-3 flex justify-between items-center bg-background-light hover:bg-primary transition-colors"
+                            className="w-full text-left px-4 py-3 flex justify-between items-center bg-background-light hover:bg-primary transition-colors duration-500"
                             style={{
                                 color: openIndex === index ? "#fff" : "#111618",
                                 backgroundColor: openIndex === index ? "#25aff4" : "#f5f7f8",
@@ -48,7 +48,7 @@ export default function FAQ() {
                             <span className="ml-2 text-4xl color-light">{openIndex === index ? "-" : "+"}</span>
                         </button>
                         <div
-                            className={`px-4 text-subtle-light transition-max-h duration-300 ease-in-out`}
+                            className={`px-4 text-subtle-light transition-max-h duration-500 ease-in-out`}
                             style={{
                                 maxHeight: openIndex === index ? "200px" : "0px",
                                 color: "#607c8a",

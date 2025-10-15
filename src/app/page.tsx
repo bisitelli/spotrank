@@ -5,6 +5,7 @@ import { useState } from "react";
 import { analyzeCompany } from "../../lib/analyzeCompany";
 import LogoStrip from "../app/components/logoStrip";
 import FaqComponent from "../app/components/faqComponent";
+import RankTable from "../app/components/rankTable";
 
 
 export default function LandingPage() {
@@ -89,6 +90,8 @@ export default function LandingPage() {
         </div>
 
         <LogoStrip />
+
+        <RankTable />
 
 
         {/* Features */}
