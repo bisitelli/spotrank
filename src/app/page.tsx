@@ -5,13 +5,20 @@ import { useState } from "react";
 import { analyzeCompany } from "../../lib/analyzeCompany";
 import LogoStrip from "../app/components/logoStrip";
 import FaqComponent from "../app/components/faqComponent";
-import RankTable from "../app/components/rankTable";
+import EmailForm from "../app/components/emailForm";
 
 
 export default function LandingPage() {
   const [company, setCompany] = useState("");
   const [report, setReport] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+
+  const [url, setUrl] = useState("");
+  const [showForm, setShowForm] = useState(false);
+
+  const handleStart = () => {
+    if (url.trim()) setShowForm(true);
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,13 +67,13 @@ export default function LandingPage() {
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
               Näy paremmin tekoälylle
             </h1>
-            <p className="text-lg md:text-xl text-subtle-light dark:text-subtle-dark max-w-xl">
-              Testaa yrityksesi näkyvyys sekunneissa – ja selvitä, miten brändisi näkyy johtavilla tekoälyalustoilla.
+            <p className="text-lg md:text-xl text-subtle-light max-w-xl">
+              Testaa yrityksesi näkyvyys veloituksetta – ja selvitä, miten brändisi näkyy johtavilla tekoälyalustoilla.
             </p>
           </div>
 
           <div className="w-full max-w-2xl">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-border-light dark:border-border-dark p-2 shadow-md">
+            <form className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-border-light dark:border-border-dark p-2 shadow-md">
 
               <div className="flex items-center px-2">
                 <svg className="text-subtle-light dark:text-subtle-dark" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
@@ -76,23 +83,22 @@ export default function LandingPage() {
 
               <input
                 type="text"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
                 placeholder="Syötä yrityksesi URL"
                 className="flex-1 border-none bg-transparent text-foreground-light dark:text-foreground-dark focus:outline-none focus:ring-0 text-base px-2 py-2"
               />
 
-              <button type="submit" className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
+              <button type="button" onClick={handleStart} disabled={!url} className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
                 Aloita nyt
               </button>
             </form>
           </div>
+
+          {showForm && <EmailForm preFilledUrl={url} onClose={() => setShowForm(false)} />}
         </div>
 
         <LogoStrip />
-
-        <RankTable />
-
 
         {/* Features */}
         <div className="mt-12 md:mt-24">
