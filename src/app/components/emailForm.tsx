@@ -28,7 +28,7 @@ export default function EmailForm({ preFilledUrl = "", onClose }: { preFilledUrl
 
 
 
-            <div className="relative bg-background-light rounded-2xl shadow-xl p6 w-full max-w-md z-10 animate-fadeIn">
+            <div className="relative bg-background-light rounded-2xl shadow-xl p-8 w-full max-w-md z-10 animate-fadeIn">
                 <button
                     onClick={onClose}
                     className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-xl"
@@ -53,7 +53,7 @@ export default function EmailForm({ preFilledUrl = "", onClose }: { preFilledUrl
                         type="submit"
                         disabled={status === "loading"}
                         className="w-full px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark disabled:opacity-50 transition">
-                        {status === "loading" ? "Lähetetään..." : "Lähetä raportti"}
+                        {status === "loading" ? "Lähetetään..." : "Lähetä"}
                     </button>
 
                     {status === "success" && <p className="text-primary text-center mt-2">Kiitos! Saat analyysin pian sähköpostiisi.</p>}
