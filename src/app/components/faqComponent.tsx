@@ -2,28 +2,28 @@ import { useState } from "react";
 
 const faqs = [
     {
-        question: "Mitä tarkoittaa AI Visibility Score?",
-        answer: "AI Visibility Score yhdistää Googlen näkyvyyden ja verkkosisällön laadun arvioinnin, antaen kokonaiskuvan yrityksesi online-näkyvyydestä."
+        question: "Miten SpotRank analysoi verkkosivusi?",
+        answer: "SpotRankin tarkastelee yrityksesi näkyvyyttä suurimmilla tekoälyalustoilla ja hakukoneissa. Se arvioi, miten hyvin sisältösi, metatiedot ja sivuston rakenne tukevat löydettävyyttä, ja antaa konkreettisia ehdotuksia näkyvyyden parantamiseksi."
     },
     {
-        question: "Miten AI analysoi yritykseni verkkosivun?",
-        answer: "Tekoäly tarkastelee metatietoja, otsikoita, schema.org-dataa, palveluiden relevanssia ja käyttäjäkokemusta arvioidakseen sivustosi näkyvyyttä."
+        question: "Miksi tekoälyhakuoptimointi on tärkeää yritykselleni?",
+        answer: "Tekoälyhaut yleistyvät nopeasti, ja yhä useampi asiakas löytää palvelut AI-alustojen ja hakukoneiden kautta. Optimoimalla näkyvyytesi näissä hauissa voit varmistaa, että yrityksesi löytyy oikeissa yhteyksissä, houkutella lisää asiakkaita ja saada kilpailuetua markkinoilla."
     },
     {
-        question: "Voiko AI Visibility Score parantaa hakukonenäkyvyyttäni?",
-        answer: "Score ei suoraan muuta sijoituksia, mutta antaa konkreettisia parannusehdotuksia, joiden avulla voit optimoida sivustosi."
+        question: "Voiko tekoälyhakuoptimointi parantaa näkyvyyttäni?",
+        answer: "Kyllä! Annamme konkreettisia suosituksia, joilla voit parantaa sisältöäsi ja sivustosi rakennetta. Näin varmistat, että yrityksesi löytyy helpommin AI-alustoilta ja hakukoneista, mikä lisää potentiaalisten asiakkaiden määrää."
     },
     {
-        question: "Mitä tarkoittaa Google Visibility Analysis?",
-        answer: "Analyysi tarkistaa, kuinka usein yrityksesi domain näkyy hakutuloksissa tärkeimmillä avainsanoilla ja arvioi sen näkyvyyden vahvuuden."
+        question: "Miten kilpailijoiden näkyvyys vaikuttaa minun yritykseeni?",
+        answer: "Kilpailijoiden analyysi paljastaa, missä he menestyvät paremmin ja missä sinulla on mahdollisuus erottua. Näin voit kohdentaa toimenpiteesi sinne, missä niistä on suurin vaikutus näkyvyyteen ja asiakashankintaan."
     },
     {
-        question: "Kuinka usein minun tulisi seurata AI Visibility Scorea?",
-        answer: "Suositeltavaa on seurata kuukausittain tai uusien sivujen lisäyksen jälkeen, jotta näet kehityksen ja muutokset näkyvyydessä."
+        question: "Miten voin tavoittaa oikeat asiakkaat oikeassa paikassa?",
+        answer: "SpotRank mahdollistaa kohdennetun analyysin maittain ja kielittäin. Näin varmistat, että yrityksesi näkyy juuri niillä markkinoilla ja kohderyhmillä, joilla sillä on suurin vaikutus ja tuotto."
     },
     {
-        question: "Voinko kohdistaa hakuanalyysin tiettyyn maahan tai kieleen?",
-        answer: "Kyllä, Custom Search API mahdollistaa maakohtaisen haun, mikä on tärkeää paikalliselle liiketoiminnalle."
+        question: "Kuinka voin varmistaa, että näkyvyyteni kehittyy jatkuvasti?",
+        answer: "Säännöllinen seuranta auttaa tunnistamaan nopeasti, mikä toimii ja missä on parannettavaa. SpotRankin avulla näet näkyvyyden kehityksen reaaliajassa ja voit reagoida ennen kuin kilpailijat ehtivät ohittaa sinut."
     },
 ];
 
