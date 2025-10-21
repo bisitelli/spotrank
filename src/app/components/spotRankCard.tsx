@@ -16,6 +16,25 @@ export default function SpotRankCard({
     features,
     cta,
 }: SpotRankCardProps) {
+
+    const handleCheckout = async () => {
+    try {
+        const res = await fetch("/api/create-checkout-session", {
+            method: "POST",
+        });
+        const data = await res.json();
+
+        if (data.url) {
+            window.location.href = data.url; // Ohjaa Stripe Checkoutiin
+        } else {
+            alert("Stripe-maksun käynnistys epäonnistui.");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Virhe maksua käynnistäessä.");
+    }
+};
+
     return (
         <div className="flex flex-col justify-between h-full rounded-xl border border-border-light bg-background-light p-6 shadow-sm transition-shadow">
             {/* Yläosa */}
@@ -41,7 +60,7 @@ export default function SpotRankCard({
 
             {/* CTA */}
             <div className="mt-6">
-                <button className="w-full rounded-lg bg-primary text-white font-medium py-2.5 hover:bg-primary/90 transition-colors">
+                <button onClick={handleCheckout} className="w-full rounded-lg bg-primary text-white font-medium py-2.5 hover:bg-primary/90 transition-colors">
                     {cta}
                 </button>
             </div>
