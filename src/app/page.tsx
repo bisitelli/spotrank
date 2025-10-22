@@ -7,7 +7,6 @@ import LogoStrip from "../app/components/logoStrip";
 import FaqComponent from "../app/components/faqComponent";
 import EmailForm from "../app/components/emailForm";
 import SpotRankCards from "../app/components/spotRankCards";
-import AIOSection from "./components/aioSection";
 import ComparisionSection from "./components/comparisionSection";
 import { CheckCircle } from "lucide-react";
 
