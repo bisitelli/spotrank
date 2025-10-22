@@ -7,6 +7,8 @@ import LogoStrip from "../app/components/logoStrip";
 import FaqComponent from "../app/components/faqComponent";
 import EmailForm from "../app/components/emailForm";
 import SpotRankCards from "../app/components/spotRankCards";
+import AIOSection from "./components/aioSection";
+import ComparisionSection from "./components/comparisionSection";
 import { CheckCircle } from "lucide-react";
 
 
@@ -66,11 +68,11 @@ export default function LandingPage() {
       <main className="container mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col items-center gap-12 text-center">
           <div className="flex flex-col gap-6 items-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
+            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter max-w-4xl">
               Näy paremmin tekoälylle
             </h1>
-            <p className="text-lg md:text-xl text-subtle-light max-w-xl">
-              Testaa yrityksesi näkyvyys veloituksetta – ja selvitä, miten brändisi näkyy johtavilla tekoälyalustoilla.
+            <p className="text-lg md:text-xl text-subtle-light max-w-3xl">
+              Testaa yrityksesi näkyvyys veloituksetta – ja selvitä, kuinka todennäköisesti ChatGPT, Google ja muut AI-hakukoneet suosittelevat brändiäsi.
             </p>
           </div>
 
@@ -102,8 +104,10 @@ export default function LandingPage() {
 
         <LogoStrip />
 
+        <ComparisionSection />
+
         {/* Features */}
-        <div className="mt-12 md:mt-24 mb-16">
+        <div className="mt-8 md:mt-12 mb-16">
           <div className="flex flex-col justify-between h-full gap-12">
             <div className="flex flex-col gap-4 text-center">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vie näkyvyytesi seuraavalle tasolle</h2>

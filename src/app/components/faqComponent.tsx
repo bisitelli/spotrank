@@ -31,8 +31,8 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <div className="mt-12 md:mt-24 max-w-2xl mx-auto p-6">
-            <h2 className="text-2xl font-bold mb-6 text-foreground-light text-center">FAQ</h2>
+        <div className="mt-12 md:mt-12 max-w-2xl mx-auto p-6">
+            <h2 className="text-4xl font-bold mb-6 text-foreground-light text-center">FAQ</h2>
             <div className="space-y-4">
                 {faqs.map((faq, index) => (
                     <div key={index} className="border border-border-light rounded-lg overflow-hidden">

@@ -16,7 +16,7 @@ export default function LogoStrip() {
             <div className="max-w-6xl mx-auto px-4">
                 <div className="text-center mb-6">
                     <p className="text-sm font-medium text-subtle-light">
-                        Analysoimme näkyvyytesi suurimmilla alustoilla
+                        
                     </p>
                 </div>
 

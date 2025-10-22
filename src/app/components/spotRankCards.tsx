@@ -40,7 +40,7 @@ const cards = [
 
 export default function SpotRankCards() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mt-12">
             {cards.map((card, i) => (
                 <SpotRankCard
                     key={i}
@@ -49,7 +49,7 @@ export default function SpotRankCards() {
                     features={card.features}
                     cta={card.cta}
                     icon={
-                        <svg fill="currentColor" height="28px" viewBox="0 0 48 48" width="28px" xmlns="http://www.w3.org/2000/svg">
+                        <svg fill="currentColor" height="14px" viewBox="0 0 48 48" width="14px" xmlns="http://www.w3.org/2000/svg">
                             <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"></path>
                         </svg>
                     }

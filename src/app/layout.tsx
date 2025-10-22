@@ -20,6 +20,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap"
+          rel="stylesheet"
+        />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>
@@ -46,6 +50,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   },
                   fontFamily: {
                     display: ["Manrope", "sans-serif"],
+                    playfair: ['"Playfair Display"', "serif"],
                   },
                   borderRadius: {
                     DEFAULT: "0.5rem",
