@@ -38,7 +38,7 @@ export default function SpotRankCard({
             <div className="flex flex-col gap-4 flex-grow">
 
                 <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-1 text-xl font-semibold">
+                    <div className="flex items-center gap-1 text-xl font-semibold mb-3">
                         <svg
                             fill="none"
                             viewBox="0 0 48 48"
