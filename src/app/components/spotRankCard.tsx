@@ -1,8 +1,6 @@
-import { ReactNode } from "react";
 import { CheckCircle } from "lucide-react";
 
 type SpotRankCardProps = {
-    icon: ReactNode;
     title: string;
     description: string;
     features: string[];
@@ -10,7 +8,6 @@ type SpotRankCardProps = {
 };
 
 export default function SpotRankCard({
-    icon,
     title,
     description,
     features,
@@ -18,33 +15,44 @@ export default function SpotRankCard({
 }: SpotRankCardProps) {
 
     const handleCheckout = async () => {
-    try {
-        const res = await fetch("/api/create-checkout-session", {
-            method: "POST",
-        });
-        const data = await res.json();
+        try {
+            const res = await fetch("/api/create-checkout-session", {
+                method: "POST",
+            });
+            const data = await res.json();
 
-        if (data.url) {
-            window.location.href = data.url; // Ohjaa Stripe Checkoutiin
-        } else {
-            alert("Stripe-maksun käynnistys epäonnistui.");
+            if (data.url) {
+                window.location.href = data.url; // Ohjaa Stripe Checkoutiin
+            } else {
+                alert("Stripe-maksun käynnistys epäonnistui.");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Virhe maksua käynnistäessä.");
         }
-    } catch (err) {
-        console.error(err);
-        alert("Virhe maksua käynnistäessä.");
-    }
-};
+    };
 
     return (
         <div className="flex flex-col justify-between h-full rounded-xl border border-border-light bg-background-light p-6 shadow-sm transition-shadow">
             {/* Yläosa */}
             <div className="flex flex-col gap-4 flex-grow">
-                <div className="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
-                    {icon}
-                </div>
 
                 <div className="flex flex-col gap-2">
-                    <h3 className="text-xl font-bold">{title}</h3>
+                    <div className="flex items-center gap-1 text-xl font-semibold">
+                        <svg
+                            fill="none"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-blue-500"
+                        >
+                            <path
+                                d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
+                                fill="currentColor"
+                            />
+                        </svg>
+                        <span>{title}</span>
+                    </div>
+
                     <p className="text-subtle-light dark:text-subtle-dark">{description}</p>
                 </div>
 

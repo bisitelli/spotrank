@@ -67,8 +67,8 @@ export default function LandingPage() {
       <main className="container mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col items-center gap-12 text-center">
           <div className="flex flex-col gap-6 items-center">
-            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter max-w-4xl">
-              Näy paremmin tekoälylle
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
+              Näy paremmin tekoälylle <br /> <span className="text-primary">SpotRank</span>in avulla
             </h1>
             <p className="text-lg md:text-xl text-subtle-light max-w-3xl">
               Testaa yrityksesi näkyvyys veloituksetta – ja selvitä, kuinka todennäköisesti ChatGPT, Google ja muut AI-hakukoneet suosittelevat brändiäsi.

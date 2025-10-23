@@ -42,7 +42,7 @@ const StepItem: React.FC<{ step: Step | NewWayStep; isNewWay: boolean }> = ({ st
     // Uuden tavan numeroiden ja tekstin tyylit
     const newNumberBg = 'bg-primary';
     const newNumberText = 'text-white';
-    const newText = 'text-white';
+    const newText = 'text-black';
     const newLine = 'bg-primary';
 
     // Valitaan tyylit sen mukaan, onko kyseessä vanha vai uusi tapa
@@ -71,16 +71,13 @@ const StepItem: React.FC<{ step: Step | NewWayStep; isNewWay: boolean }> = ({ st
     );
 };
 
-/**
- * Pääkomponentti vertailunäkymälle
- */
 const SeoComparison: React.FC = () => {
     return (
         // Pääkontaineri käyttää kevyttä taustaväriä ja sisältää kaksi saraketta.
         <div className="min-h-screen mt-6 py-16 px-4 sm:px-6 lg:px-8 bg-background-light">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
-                {/* Vasemmalla teksti */}
+                {/* Vasen sarake */}
                 <div className="flex-1">
                     <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-8">
                         AI-optimointi – <span className="font-playfair italic font-normal">kuin yrityksesi ylimääräinen myyjä</span>
@@ -91,8 +88,8 @@ const SeoComparison: React.FC = () => {
                     </p>
                 </div>
 
-                {/* ******************* OIKEA SARAKE: UUSI TAPA ******************* */}
-                <div className="p-8 rounded-lg bg-foreground-light text-white">
+                {/* Oikea sarake */}
+                <div className="p-8 rounded-lg bg-background-light text-black rounded-xl border border-border-light">
                     <div className="flex items-center gap-1 mb-6">
                         <div className="text-primary size-7">
                             <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">

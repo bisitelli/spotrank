@@ -6,7 +6,7 @@ const cards = [
         description:
             "Saat nopeasti käsityksen yrityksesi näkyvyydestä tekoälyhauissa ja hakukoneissa.",
         features: [
-            "Oman yrityksen tekoälynäkyvyysanalyysi",
+            "Oman yrityksen näkyvyysanalyysi",
             "Keskeiset vahvuudet ja kehityskohteet",
             "Yhteenveto ja suositukset seuraavista askelista",
         ],
@@ -18,7 +18,7 @@ const cards = [
             "Vertaa yrityksesi näkyvyyttä kilpailijoihin ja selvitä, missä he menestyvät paremmin sekä missä sinulla on kilpailuetua.",
         features: [
             "Oman yrityksen näkyvyysanalyysi",
-            "Kilpailijoiden tekoälynäkyvyys ja vahvuudet",
+            "Kilpailijoiden näkyvyys ja vahvuudet",
             "Vertailu: missä kilpailijat pärjäävät paremmin",
             "Toimenpide-ehdotukset kilpailuedun saavuttamiseksi",
         ],
@@ -48,11 +48,6 @@ export default function SpotRankCards() {
                     description={card.description}
                     features={card.features}
                     cta={card.cta}
-                    icon={
-                        <svg fill="currentColor" height="14px" viewBox="0 0 48 48" width="14px" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"></path>
-                        </svg>
-                    }
                 />
             ))}
         </div>
