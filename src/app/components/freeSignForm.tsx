@@ -3,15 +3,11 @@
 import { useState, useEffect } from "react";
 
 export default function FreeSignForm({ preFilledUrl = "", onClose }: { preFilledUrl?: string; onClose: () => void }) {
-    const [url, setUrl] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const storedUrl = localStorage.getItem("url");
-        if (storedUrl) setUrl(storedUrl);
-    }, []);
+    const [url] = useState(preFilledUrl);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -52,35 +48,40 @@ export default function FreeSignForm({ preFilledUrl = "", onClose }: { preFilled
             <div className="relative bg-background-light rounded-2xl shadow-xl p-8 w-full max-w-md z-10 animate-fadeIn">
                 <button
                     onClick={onClose}
-                    className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-xl"
+                    className="absolute top-1 right-5 text-gray-400 hover:text-gray-700 text-2xl"
                     arial-label="Sulje">
                     x
                 </button>
 
                 <h2 className="text-xl font-semibold text-center mb-4 text-black">
-                    Syötä vielä yrityksesi sähköposti saadaksesi raportin
+                    {url ? (
+                        <>
+                            <span className="block text-gray-600 text-sm mb-1">Analysoitava sivusto:</span>
+                            <span className="text-primary font-bold break-words">www.{url}</span>
+                        </>
+                    ) : (
+                        "Syötä vielä loput tiedot"
+                    )}
                 </h2>
 
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="URL"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                    />
+                <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     <input
                         type="email"
                         placeholder="Sähköposti"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                     <input
                         type="tel"
                         placeholder="Puhelin"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     />
-                    <button type="submit" disabled={loading}>
+                    <button type="submit" disabled={loading}
+                        className="w-full px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark disabled:opacity-50 transition">
+
                         {loading ? "Lähetetään..." : "Lähetä"}
                     </button>
                 </form>

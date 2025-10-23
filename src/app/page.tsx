@@ -11,9 +11,6 @@ import FreeSignForm from "./components/freeSignForm"
 
 
 export default function LandingPage() {
-  const [company, setCompany] = useState("");
-  const [report, setReport] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
 
   const [url, setUrl] = useState("");
   const [showForm, setShowForm] = useState(false);
