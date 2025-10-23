@@ -5,6 +5,7 @@ type SpotRankCardProps = {
     description: string;
     features: string[];
     cta: string;
+    isFree?: boolean;
 };
 
 export default function SpotRankCard({
@@ -12,11 +13,15 @@ export default function SpotRankCard({
     description,
     features,
     cta,
+    isFree = false,
 }: SpotRankCardProps) {
 
     const handleCheckout = async () => {
         try {
-            const res = await fetch("/api/create-checkout-session", {
+
+            const apiUrl = isFree ? "/api/free-sign-up" : "/api/create-checkout-session";
+
+            const res = await fetch(apiUrl, {
                 method: "POST",
             });
             const data = await res.json();

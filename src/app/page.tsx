@@ -2,13 +2,12 @@
 
 import React from "react";
 import { useState } from "react";
-import { analyzeCompany } from "../../lib/analyzeCompany";
 import LogoStrip from "../app/components/logoStrip";
 import FaqComponent from "../app/components/faqComponent";
-import EmailForm from "../app/components/emailForm";
 import SpotRankCards from "../app/components/spotRankCards";
 import ComparisionSection from "./components/comparisionSection";
-import { CheckCircle } from "lucide-react";
+import FreeSignForm from "./components/freeSignForm"
+
 
 
 export default function LandingPage() {
@@ -22,19 +21,6 @@ export default function LandingPage() {
   const handleStart = () => {
     if (url.trim()) setShowForm(true);
   }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const data = await analyzeCompany(company);
-      setReport(data);
-    } catch (err) {
-      alert("Error fetching report");
-    } finally {
-      setLoading(false);
-    }
-  };
 
 
   return (
@@ -98,7 +84,7 @@ export default function LandingPage() {
             </form>
           </div>
 
-          {showForm && <EmailForm preFilledUrl={url} onClose={() => setShowForm(false)} />}
+          {showForm && <FreeSignForm preFilledUrl={url} onClose={() => setShowForm(false)} />}
         </div>
 
         <LogoStrip />

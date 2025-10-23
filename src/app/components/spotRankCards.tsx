@@ -11,6 +11,7 @@ const cards = [
             "Yhteenveto ja suositukset seuraavista askelista",
         ],
         cta: "Tee ilmainen analyysi",
+        isFree: true,
     },
     {
         title: "SpotRank Rival",
@@ -23,6 +24,7 @@ const cards = [
             "Toimenpide-ehdotukset kilpailuedun saavuttamiseksi",
         ],
         cta: "Tilaa kilpailija-analyysi",
+        isFree: false,
     },
     {
         title: "SpotRank Boost",
