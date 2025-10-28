@@ -72,7 +72,7 @@ export default function SpotRankCard({
             </div>
 
             {/* CTA */}
-            <div className="mt-6">
+            <div className="mt-12">
                 <button onClick={handleCheckout} className="w-full rounded-lg bg-primary text-white font-medium py-2.5 hover:bg-primary/90 transition-colors">
                     {cta}
                 </button>

@@ -1,4 +1,7 @@
+"use client"
+
 import React from 'react';
+import BookCalendar from "./bookCalendar"
 
 // Määritellään tyypit listojen kohteille
 type Step = {
@@ -27,25 +30,20 @@ const newWaySteps: NewWayStep[] = [
     { id: 4, text: "Seuranta ja jatkuva kasvu" },
 ];
 
-/**
- * Pieni komponentti listan askeleille
- */
+
 const StepItem: React.FC<{ step: Step | NewWayStep; isNewWay: boolean }> = ({ step, isNewWay }) => {
     const isFaded = !isNewWay && 'isFaded' in step && step.isFaded;
 
-    // Vanhan tavan numeroiden ja tekstin tyylit
     const oldNumberBg = isFaded ? 'bg-subtle-light/50' : 'bg-foreground-light';
     const oldNumberText = isFaded ? 'text-subtle-light' : 'text-white';
     const oldText = isFaded ? 'text-subtle-light' : 'text-foreground-light';
     const oldLine = isFaded ? 'bg-subtle-light/50' : 'bg-foreground-light';
 
-    // Uuden tavan numeroiden ja tekstin tyylit
     const newNumberBg = 'bg-primary';
     const newNumberText = 'text-white';
     const newText = 'text-black';
     const newLine = 'bg-primary';
 
-    // Valitaan tyylit sen mukaan, onko kyseessä vanha vai uusi tapa
     const numberBg = isNewWay ? newNumberBg : oldNumberBg;
     const numberText = isNewWay ? newNumberText : oldNumberText;
     const textColor = isNewWay ? newText : oldText;
@@ -53,17 +51,15 @@ const StepItem: React.FC<{ step: Step | NewWayStep; isNewWay: boolean }> = ({ st
 
     return (
         <div className="flex items-start mb-4 relative">
-            {/* Pystysuuntainen viiva (paitsi viimeiselle askeleelle) */}
             {step.id < (isNewWay ? newWaySteps.length : oldWaySteps.length) && (
                 <div className={`absolute left-5 top-0 w-0.5 h-full transform translate-y-2 ${lineColor}`}></div>
             )}
 
-            {/* Numeropallo */}
+
             <div className={`z-10 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold mr-4 shrink-0 ${numberBg} ${numberText}`}>
                 {step.id}
             </div>
 
-            {/* Askeleen teksti */}
             <div className={`text-lg font-medium ${textColor}`}>
                 {step.text}
             </div>
@@ -72,6 +68,7 @@ const StepItem: React.FC<{ step: Step | NewWayStep; isNewWay: boolean }> = ({ st
 };
 
 const SeoComparison: React.FC = () => {
+
     return (
         // Pääkontaineri käyttää kevyttä taustaväriä ja sisältää kaksi saraketta.
         <div className="min-h-screen mt-6 py-16 px-4 sm:px-6 lg:px-8 bg-background-light">
@@ -86,6 +83,12 @@ const SeoComparison: React.FC = () => {
                         AI-optimointi (AIO) on hakukoneoptimoinnin uusi vaihe. Se auttaa yrityksiä näkymään paremmin generatiivisissa hakupalveluissa.
                         Me olemme kumppanisi tässä: mittaamme näkyvyyden, paljastamme kehityskohteet ja annamme konkreettiset ohjeet brändisi AI-lukukelpoisuuden parantamiseen.
                     </p>
+
+                    <BookCalendar/>
+
+
+
+
                 </div>
 
                 {/* Oikea sarake */}

@@ -23,7 +23,7 @@ const cards = [
             "Vertailu: missä kilpailijat pärjäävät paremmin",
             "Toimenpide-ehdotukset kilpailuedun saavuttamiseksi",
         ],
-        cta: "Tilaa kilpailija-analyysi",
+        cta: "399€",
         isFree: false,
     },
     {
@@ -36,7 +36,7 @@ const cards = [
             "Asiantuntijapalaverit ja seuranta",
             "Selkeä roadmap tavoitteiden saavuttamiseksi",
         ],
-        cta: "Varaa konsultaatio",
+        cta: "Pyydä tarjous",
     },
 ];
 

@@ -7,6 +7,7 @@ import FaqComponent from "../app/components/faqComponent";
 import SpotRankCards from "../app/components/spotRankCards";
 import ComparisionSection from "./components/comparisionSection";
 import FreeSignForm from "./components/freeSignForm"
+import BookCalendar from "./components/bookCalendar"
 
 
 
@@ -18,6 +19,9 @@ export default function LandingPage() {
   const handleStart = () => {
     if (url.trim()) setShowForm(true);
   }
+
+
+  const [showEmail, setShowEmail] = useState(false);
 
 
   return (
@@ -33,16 +37,28 @@ export default function LandingPage() {
             </div>
             <h2 className="text-xl font-bold">SpotRank</h2>
           </div>
-          <button className="hidden md:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
-            Ota yhteyttä
-          </button>
-          <button className="md:hidden p-2 rounded-lg hover:bg-primary/20">
-            <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="6" y2="6"></line>
-              <line x1="4" x2="20" y1="18" y2="18"></line>
-            </svg>
-          </button>
+          <div className="relative inline-block">
+            <button className="hidden md:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity"
+              onClick={() => setShowEmail(!showEmail)}>
+              Ota yhteyttä
+            </button>
+
+            <button className="md:hidden p-2 rounded-lg hover:bg-primary/20"
+              onClick={() => setShowEmail(!showEmail)}>
+              <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+              </svg>
+            </button>
+
+            {showEmail && (
+              <div className="absolute top-full mt-2 right-0 md:right-auto bg-white text-gray-800 text-sm px-4 py-2 rounded-lg shadow-md border border-gray-200 animate-fade-in"
+                style={{ right: "0", maxWidth: "calc(100vw - 1rem)" }}>
+                info@getspotrank.com
+              </div>
+            )}
+          </div>
         </div>
       </header>
 
