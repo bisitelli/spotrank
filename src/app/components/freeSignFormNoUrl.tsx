@@ -2,34 +2,25 @@
 
 import { useState } from "react";
 
-export default function FreeSignForm({
-    preFilledUrl = "",
-    onClose,
-}: {
-    preFilledUrl?: string;
-    onClose: () => void;
-}) {
-    const [url, setUrl] = useState(preFilledUrl);
+export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) {
+    const [url, setUrl] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const safeUrl = url
-        ? url.startsWith("www.")
-            ? url
-            : `www.${url}`
-        : "";
+
+    const safeUrl = url ? (url.startsWith("www.") ? url : `www.${url}`) : "";
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!url || !email) {
+        if (!email) {
             alert("Täytä kaikki vaaditut kentät.");
             return;
         }
 
         setLoading(true);
-        // ...lähetyslogiikka
+
     };
 
     return (
@@ -46,23 +37,14 @@ export default function FreeSignForm({
                 </button>
 
                 <h2 className="text-xl font-semibold text-center mb-4 text-black">
-                    {url ? (
-                        <>
-                            <span className="block text-gray-900 text-xl mb-1">
-                                Syötä tietosi
-                            </span>
-                        </>
-                    ) : (
-                        "Syötä vielä loput tiedot"
-                    )}
+                    Syötä tietosi
                 </h2>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                    {/* URL-input näkyy jos se on tyhjä tai haluat antaa mahdollisuuden muuttaa sitä */}
                     <input
                         type="text"
                         placeholder="Yrityksen URL"
-                        value={safeUrl}
+                        value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     />
@@ -89,10 +71,14 @@ export default function FreeSignForm({
                         {loading ? "Lähetetään..." : "Lähetä"}
                     </button>
                 </form>
+
                 <div className="flex items-center gap-1 mt-4">
                     <div className="text-primary size-7">
                         <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+                            <path
+                                d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
+                                fill="currentColor"
+                            ></path>
                         </svg>
                     </div>
                     <h2 className="text-xl font-bold">SpotRank</h2>

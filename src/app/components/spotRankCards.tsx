@@ -10,7 +10,8 @@ const cards = [
             "Keskeiset vahvuudet ja kehityskohteet",
             "Yhteenveto ja suositukset seuraavista askelista",
         ],
-        cta: "Tee ilmainen analyysi",
+        cta: "Tilaa ilmainen analyysi",
+        openForm: true,
 
     },
     {
@@ -25,7 +26,7 @@ const cards = [
         ],
         cta: "499€",
         ctaLink: "https://buy.stripe.com/cNi7sL6xNeti8cg5oje3e00"
-        
+
 
     },
     {
@@ -43,7 +44,11 @@ const cards = [
     },
 ];
 
-export default function SpotRankCards() {
+type SpotRankCardsProps = {
+    openForm: (url: string) => void;
+};
+
+export default function SpotRankCards({ openForm }: SpotRankCardsProps) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mt-12">
             {cards.map((card, i) => (
@@ -54,6 +59,7 @@ export default function SpotRankCards() {
                     features={card.features}
                     cta={card.cta}
                     ctaLink={card.ctaLink ?? ""}
+                    openForm={card.openForm ? (url) => openForm(url) : undefined}
                 />
             ))}
         </div>

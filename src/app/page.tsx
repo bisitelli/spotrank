@@ -7,18 +7,27 @@ import FaqComponent from "../app/components/faqComponent";
 import SpotRankCards from "../app/components/spotRankCards";
 import ComparisionSection from "./components/comparisionSection";
 import FreeSignForm from "./components/freeSignForm"
-import BookCalendar from "./components/bookCalendar"
+import FreeSignFormNoUrl from "./components/freeSignFormNoUrl"
+
 
 
 
 export default function LandingPage() {
 
   const [url, setUrl] = useState("");
-  const [showForm, setShowForm] = useState(false);
+  const [showHeroForm, setShowHeroForm] = useState(false);
+  const [showCardForm, setShowCardForm] = useState(false);
+  const [formUrl, setFormUrl] = useState("");
+
+  const openForm = (url: string) => {
+  setFormUrl(url);
+  setShowCardForm(true);
+};
 
   const handleStart = () => {
-    if (url.trim()) setShowForm(true);
+    if (url.trim()) setShowHeroForm(true);
   }
+  
 
 
   const [showEmail, setShowEmail] = useState(false);
@@ -97,7 +106,7 @@ export default function LandingPage() {
             </form>
           </div>
 
-          {showForm && <FreeSignForm preFilledUrl={url} onClose={() => setShowForm(false)} />}
+          {showHeroForm && <FreeSignForm preFilledUrl={url} onClose={() => setShowHeroForm(false)} />}
         </div>
 
         <LogoStrip />
@@ -116,7 +125,11 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <SpotRankCards />
+        <SpotRankCards openForm={() => setShowCardForm(true)} />
+
+        {showCardForm && <FreeSignFormNoUrl onClose={() => setShowCardForm(false)} />}
+        
+
 
         <FaqComponent />
 
