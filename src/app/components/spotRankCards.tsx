@@ -11,7 +11,7 @@ const cards = [
             "Yhteenveto ja suositukset seuraavista askelista",
         ],
         cta: "Tee ilmainen analyysi",
-        isFree: true,
+
     },
     {
         title: "SpotRank Rival",
@@ -23,8 +23,10 @@ const cards = [
             "Vertailu: missä kilpailijat pärjäävät paremmin",
             "Toimenpide-ehdotukset kilpailuedun saavuttamiseksi",
         ],
-        cta: "399€",
-        isFree: false,
+        cta: "499€",
+        ctaLink: "https://buy.stripe.com/cNi7sL6xNeti8cg5oje3e00"
+        
+
     },
     {
         title: "SpotRank Boost",
@@ -36,7 +38,8 @@ const cards = [
             "Asiantuntijapalaverit ja seuranta",
             "Selkeä roadmap tavoitteiden saavuttamiseksi",
         ],
-        cta: "Pyydä tarjous",
+        cta: "1999€",
+        ctaLink: "https://buy.stripe.com/eVq3cvcWbdpe9gkaIDe3e01"
     },
 ];
 
@@ -50,6 +53,7 @@ export default function SpotRankCards() {
                     description={card.description}
                     features={card.features}
                     cta={card.cta}
+                    ctaLink={card.ctaLink ?? ""}
                 />
             ))}
         </div>

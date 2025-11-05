@@ -5,7 +5,7 @@ type SpotRankCardProps = {
     description: string;
     features: string[];
     cta: string;
-    isFree?: boolean;
+    ctaLink: string
 };
 
 export default function SpotRankCard({
@@ -13,29 +13,9 @@ export default function SpotRankCard({
     description,
     features,
     cta,
-    isFree = false,
+    ctaLink
 }: SpotRankCardProps) {
 
-    const handleCheckout = async () => {
-        try {
-
-            const apiUrl = isFree ? "/api/free-sign-up" : "/api/create-checkout-session";
-
-            const res = await fetch(apiUrl, {
-                method: "POST",
-            });
-            const data = await res.json();
-
-            if (data.url) {
-                window.location.href = data.url; // Ohjaa Stripe Checkoutiin
-            } else {
-                alert("Stripe-maksun käynnistys epäonnistui.");
-            }
-        } catch (err) {
-            console.error(err);
-            alert("Virhe maksua käynnistäessä.");
-        }
-    };
 
     return (
         <div className="flex flex-col justify-between h-full rounded-xl border border-border-light bg-background-light p-6 shadow-sm transition-shadow">
@@ -73,7 +53,7 @@ export default function SpotRankCard({
 
             {/* CTA */}
             <div className="mt-12">
-                <button onClick={handleCheckout} className="w-full rounded-lg bg-primary text-white font-medium py-2.5 hover:bg-primary/90 transition-colors">
+                <button onClick={() => window.location.href = ctaLink} className="w-full rounded-lg bg-primary text-white font-medium py-2.5 hover:bg-primary/90 transition-colors">
                     {cta}
                 </button>
             </div>
