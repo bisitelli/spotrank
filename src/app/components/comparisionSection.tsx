@@ -84,7 +84,7 @@ const SeoComparison: React.FC = () => {
                         Me olemme kumppanisi tässä: mittaamme näkyvyyden, paljastamme kehityskohteet ja annamme konkreettiset ohjeet brändisi AI-lukukelpoisuuden parantamiseen.
                     </p>
 
-                    <BookCalendar/>
+                    <BookCalendar />
 
 
 
@@ -115,19 +115,11 @@ const SeoComparison: React.FC = () => {
 
                     {/* Lomake/CTA-alue */}
                     <div className="w-full max-w-2xl mt-12">
-                        <form className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-border-light dark:border-border-dark p-2 shadow-md">
-
-
-                            <input
-                                type="text"
-                                placeholder="Syötä yrityksesi URL"
-                                className="flex-1 border-none bg-transparent text-foreground-light dark:text-foreground-dark focus:outline-none focus:ring-0 text-base px-2 py-2"
-                            />
-
-                            <button type="button" className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
-                                Varaa konsultaatio
-                            </button>
-                        </form>
+                        <button
+                            onClick={() => (window.location.href = 'https://buy.stripe.com/eVq3cvcWbdpe9gkaIDe3e01')}
+                            type="button" className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
+                            Aloita kasvu
+                        </button>
                     </div>
                 </div>
             </div>
