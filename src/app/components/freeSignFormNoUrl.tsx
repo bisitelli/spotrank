@@ -9,17 +9,39 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
     const [loading, setLoading] = useState(false);
 
 
-    const safeUrl = url ? (url.startsWith("www.") ? url : `www.${url}`) : "";
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!email) {
+        if (!url || !email || !phone) {
             alert("Täytä kaikki vaaditut kentät.");
             return;
         }
 
         setLoading(true);
+        try {
+            const res = await fetch("/api/leads", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ url, email, phone }),
+            });
+
+            if (!res.ok) {
+                const errorText = await res.text();
+                throw new Error(errorText || "Virhe lähetettäessä tietoja Google Sheetiin");
+            }
+
+            alert("Tiedot lähetetty onnistuneesti!");
+            onClose();  // Sulje formi
+        } catch (error) {
+            console.error("Google Sheets -virhe:", error);
+            alert("Tapahtui virhe. Yritä uudelleen.");
+        } finally {
+            setLoading(false);
+        }
+
+
 
     };
 

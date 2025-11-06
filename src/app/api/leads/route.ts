@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
         // Lisää rivi Sheetsiin
         await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEETS_ID,
-            range: "Leads", // sheetin nimi ja sarakkeet
+            range: "Taulukko1!A:C", // sheetin nimi ja sarakkeet
             valueInputOption: "USER_ENTERED",
             requestBody: {
                 values: [
