@@ -14,6 +14,9 @@ export default function FreeSignForm({
     const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false);
 
+    const [message, setMessage] = useState("");
+    const [messageType, setMessageType] = useState<"success" | "error" | "info">("info");
+
     const safeUrl = url
         ? url.startsWith("www.")
             ? url
@@ -38,18 +41,16 @@ export default function FreeSignForm({
                 body: JSON.stringify({ url: safeUrl, email, phone }),
             });
 
-            if (res.ok) {
-                alert("Tiedot lähetetty onnistuneesti!");
-                setUrl("");
-                setEmail("");
-                setPhone("");
-                onClose(); // sulkee modalin
-            } else {
-                alert("Virhe tallennettaessa tiedot.");
-            }
-        } catch (err) {
-            console.error(err);
-            alert("Yhteys epäonnistui.");
+            setMessageType("success");
+            setMessage("Tiedot lähetetty onnistuneesti!");
+            setTimeout(() => {
+                onClose();
+            }, 2000);
+        } catch (error) {
+            console.error("Google Sheets -virhe:", error);
+            setMessageType("error");
+            setMessage("Tapahtui virhe. Yritä uudelleen.");
+            setTimeout(() => setMessage(""), 3000);
         } finally {
             setLoading(false);
         }
@@ -79,6 +80,15 @@ export default function FreeSignForm({
                         "Syötä vielä loput tiedot"
                     )}
                 </h2>
+
+                {message && (
+                    <div
+                        className={`p-3 mb-4 rounded-md text-white ${messageType === "success" ? "bg-green-500" : "bg-red-500"
+                            }`}
+                    >
+                        {message}
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     {/* URL-input näkyy jos se on tyhjä tai haluat antaa mahdollisuuden muuttaa sitä */}

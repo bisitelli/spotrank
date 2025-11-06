@@ -8,6 +8,9 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
     const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false);
 
+    const [message, setMessage] = useState("");
+    const [messageType, setMessageType] = useState<"success" | "error" | "info">("info");
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -32,11 +35,16 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                 throw new Error(errorText || "Virhe lähetettäessä tietoja Google Sheetiin");
             }
 
-            alert("Tiedot lähetetty onnistuneesti!");
-            onClose();  // Sulje formi
+            setMessageType("success");
+            setMessage("Tiedot lähetetty onnistuneesti!");
+            setTimeout(() => {
+                onClose();
+            }, 2000);
         } catch (error) {
             console.error("Google Sheets -virhe:", error);
-            alert("Tapahtui virhe. Yritä uudelleen.");
+            setMessageType("error");
+            setMessage("Tapahtui virhe. Yritä uudelleen.");
+            setTimeout(() => setMessage(""), 3000);
         } finally {
             setLoading(false);
         }
@@ -61,6 +69,15 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                 <h2 className="text-xl font-semibold text-center mb-4 text-black">
                     Syötä tietosi
                 </h2>
+
+                {message && (
+                    <div
+                        className={`p-3 mb-4 rounded-md text-white ${messageType === "success" ? "bg-green-500" : "bg-red-500"
+                            }`}
+                    >
+                        {message}
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     <input
