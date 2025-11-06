@@ -34,7 +34,7 @@ export default function LandingPage() {
 
 
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+    <div className="bg-background-light font-display text-foreground-light">
       {/* Header */}
       <header className="">
         <div className="container mx-auto flex items-center justify-between px-6 py-4">
@@ -84,7 +84,7 @@ export default function LandingPage() {
           </div>
 
           <div className="w-full max-w-2xl">
-            <form className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-border-light dark:border-border-dark p-2 shadow-md">
+            <form className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white border border-border-light p-2 shadow-md">
 
               <div className="flex items-center px-2">
                 <svg className="text-subtle-light dark:text-subtle-dark" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@ export default function LandingPage() {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="Syötä yrityksesi URL"
-                className="flex-1 border-none bg-transparent text-foreground-light dark:text-foreground-dark focus:outline-none focus:ring-0 text-base px-2 py-2"
+                className="flex-1 border-none bg-transparent text-foreground-light focus:outline-none focus:ring-0 text-base px-2 py-2"
               />
 
               <button type="button" onClick={handleStart} disabled={!url} className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
@@ -118,7 +118,7 @@ export default function LandingPage() {
           <div className="flex flex-col justify-between h-full gap-12">
             <div className="flex flex-col gap-4 text-center">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vie näkyvyytesi seuraavalle tasolle</h2>
-              <p className="text-lg text-subtle-light dark:text-subtle-dark max-w-1xl mx-auto">
+              <p className="text-lg text-subtle-light max-w-1xl mx-auto">
                 SpotRank yhdistää älykkäät työkalut, joilla kehität näkyvyyttäsi tekoälyssä ja erotut kilpailijoista.
               </p>
             </div>

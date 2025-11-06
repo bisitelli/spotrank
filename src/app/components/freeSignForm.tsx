@@ -25,7 +25,7 @@ export default function FreeSignForm({
 
 
 
-        if (!url || !email || !phone) {
+        if (!safeUrl || !email || !phone) {
             alert("Täytä kaikki kentät: URL, sähköposti ja puhelin.");
             return;
         }

@@ -1,37 +1,40 @@
+import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
-import { NextResponse } from "next/server";
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
-        const { url, email, phone } = body;
+        const { url, email, phone } = await req.json();
 
-        if (!url || !phone || !email) {
-            return NextResponse.json({ error: "Puuttuvat kentät" }, { status: 400 });
+        if (!url || !email || !phone) {
+            return NextResponse.json({ error: "URL ja sähköposti ovat pakollisia." }, { status: 400 });
         }
 
-        // authentikaatio sheetsille
-        const auth = new google.auth.JWT({
-            email: process.env.GOOGLE_CLIENT_EMAIL,
-            key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+        // Google Sheets autentikaatio
+        const auth = new google.auth.GoogleAuth({
+            credentials: {
+                client_email: process.env.GOOGLE_CLIENT_EMAIL,
+                private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+            },
             scopes: ["https://www.googleapis.com/auth/spreadsheets"],
         });
 
         const sheets = google.sheets({ version: "v4", auth });
 
-        // lisää rivin sheetsiin
-        const response = await sheets.spreadsheets.values.append({
+        // Lisää rivi Sheetsiin
+        await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEETS_ID,
-            range: "Leads!A:D",
+            range: "Leads", // sheetin nimi ja sarakkeet
             valueInputOption: "USER_ENTERED",
             requestBody: {
-                values: [[new Date().toLocaleString("fi-FI"), url, email, phone || "-"]],
+                values: [
+                    [url, email, phone]
+                ],
             },
         });
 
-        return NextResponse.json({ success: true, response });
-    } catch (error) {
-        console.error("Virhe Google Sheets -integraatiossa:", error);
-        return NextResponse.json({ error: "Virhe tallennettaessa" }, { status: 500 });
+        return NextResponse.json({ message: "Lähetetty onnistuneesti!" });
+    } catch (error: any) {
+        console.error("Google Sheets -virhe:", error.message);
+        return NextResponse.json({ error: "Virhe Google Sheets -integraatiossa." }, { status: 500 });
     }
 }
