@@ -2,6 +2,7 @@ import { CheckCircle } from "lucide-react";
 
 type SpotRankCardProps = {
     title: string;
+    price: string;
     description: string;
     features: string[];
     cta: string;
@@ -11,6 +12,7 @@ type SpotRankCardProps = {
 
 export default function SpotRankCard({
     title,
+    price,
     description,
     features,
     cta,
@@ -38,6 +40,10 @@ export default function SpotRankCard({
                             />
                         </svg>
                         <span>{title}</span>
+                    </div>
+
+                    <div className="text-4xl font-bold text-foreground-light mb-4">
+                        {price}
                     </div>
 
                     <p className="text-subtle-light dark:text-subtle-dark">{description}</p>

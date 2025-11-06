@@ -3,6 +3,7 @@ import SpotRankCard from "./spotRankCard";
 const cards = [
     {
         title: "SpotRank",
+        price: "0€",
         description:
             "Saat nopeasti käsityksen yrityksesi näkyvyydestä tekoälyhauissa ja hakukoneissa.",
         features: [
@@ -10,36 +11,42 @@ const cards = [
             "Keskeiset vahvuudet ja kehityskohteet",
             "Yhteenveto ja suositukset seuraavista askelista",
         ],
-        cta: "Tilaa ilmainen analyysi",
+        cta: "Aloita nyt",
         openForm: true,
 
     },
     {
         title: "SpotRank Rival",
+        price: "499€",
         description:
             "Vertaa yrityksesi näkyvyyttä kilpailijoihin ja selvitä, missä he menestyvät paremmin sekä missä sinulla on kilpailuetua.",
         features: [
             "Oman yrityksen näkyvyysanalyysi",
-            "Kilpailijoiden näkyvyys ja vahvuudet",
+            "3 kilpailijan näkyvyys ja vahvuudet",
             "Vertailu: missä kilpailijat pärjäävät paremmin",
+            "Tunnistetut erot ja kehityskohteet",
             "Toimenpide-ehdotukset kilpailuedun saavuttamiseksi",
         ],
-        cta: "499€",
+        cta: "Aloita nyt",
         ctaLink: "https://buy.stripe.com/cNi7sL6xNeti8cg5oje3e00"
 
 
     },
     {
         title: "SpotRank Boost",
+        price: "1999€",
         description:
             "Henkilökohtainen suunnitelma ja suositukset näkyvyyden parantamiseksi tekoälyalustoilla ja hakukoneissa.",
         features: [
+            "Oman yrityksen näkyvyysanalyysi",
+            "6 kilpailijan näkyvyys ja vahvuudet",
+            "Syvävertailu näkyvyydestä ja eroista",
             "Räätälöity näkyvyyden kehittämissuunnitelma",
-            "Optimointi tekoälyhaun ja hakukoneiden kannalta",
-            "Asiantuntijapalaverit ja seuranta",
-            "Selkeä roadmap tavoitteiden saavuttamiseksi",
+            "Optimointi tekoäly- ja hakunäkyvyydelle",
+            "Seuranta- ja kick off palaverit",
+            "Quick Win -suositukset ja selkeä roadmap",
         ],
-        cta: "1999€",
+        cta: "Aloita nyt",
         ctaLink: "https://buy.stripe.com/eVq3cvcWbdpe9gkaIDe3e01"
     },
 ];
@@ -55,6 +62,7 @@ export default function SpotRankCards({ openForm }: SpotRankCardsProps) {
                 <SpotRankCard
                     key={i}
                     title={card.title}
+                    price={card.price}
                     description={card.description}
                     features={card.features}
                     cta={card.cta}

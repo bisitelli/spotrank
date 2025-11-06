@@ -23,13 +23,36 @@ export default function FreeSignForm({
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!url || !email) {
-            alert("Täytä kaikki vaaditut kentät.");
+
+
+        if (!url || !email || !phone) {
+            alert("Täytä kaikki kentät: URL, sähköposti ja puhelin.");
             return;
         }
 
         setLoading(true);
-        // ...lähetyslogiikka
+        try {
+            const res = await fetch("/api/leads", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ url: safeUrl, email, phone }),
+            });
+
+            if (res.ok) {
+                alert("Tiedot lähetetty onnistuneesti!");
+                setUrl("");
+                setEmail("");
+                setPhone("");
+                onClose(); // sulkee modalin
+            } else {
+                alert("Virhe tallennettaessa tiedot.");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Yhteys epäonnistui.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -39,7 +62,7 @@ export default function FreeSignForm({
             <div className="relative bg-background-light rounded-2xl shadow-xl p-8 w-full max-w-md z-10 animate-fadeIn">
                 <button
                     onClick={onClose}
-                    className="absolute top-1 right-5 text-gray-400 hover:text-gray-700 text-2xl"
+                    className="absolute top-1 right-5 text-gray-400 hover:text-gray-700 text-4xl"
                     aria-label="Sulje"
                 >
                     ×

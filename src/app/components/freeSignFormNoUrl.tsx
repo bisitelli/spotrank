@@ -30,7 +30,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
             <div className="relative bg-background-light rounded-2xl shadow-xl p-8 w-full max-w-md z-10 animate-fadeIn">
                 <button
                     onClick={onClose}
-                    className="absolute top-1 right-5 text-gray-400 hover:text-gray-700 text-2xl"
+                    className="absolute top-1 right-5 text-gray-400 hover:text-gray-700 text-4xl"
                     aria-label="Sulje"
                 >
                     ×
