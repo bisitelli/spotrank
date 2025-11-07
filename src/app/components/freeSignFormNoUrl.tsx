@@ -36,7 +36,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
             }
 
             setMessageType("success");
-            setMessage("Tiedot lähetetty onnistuneesti!");
+            setMessage("Tiedot lähetetty onnistuneesti!\nSivustosi analyysi toimitetaan sähköpostiisi pian.");
             setTimeout(() => {
                 onClose();
             }, 2000);
@@ -72,7 +72,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
 
                 {message && (
                     <div
-                        className={`p-3 mb-4 rounded-md text-white ${messageType === "success" ? "bg-green-500" : "bg-red-500"
+                        className={`p-3 mb-4 rounded-md text-white whitespace-pre-line ${messageType === "success" ? "bg-green-500" : "bg-red-500"
                             }`}
                     >
                         {message}
