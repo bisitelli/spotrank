@@ -81,7 +81,7 @@ const SeoComparison: React.FC = () => {
                     </h2>
                     <p className="text-gray-700">
                         AI-optimointi (AIO) on hakukoneoptimoinnin uusi vaihe. Se auttaa yrityksiä näkymään paremmin generatiivisissa hakupalveluissa.
-                        Me olemme kumppanisi tässä: mittaamme näkyvyyden, paljastamme kehityskohteet ja annamme konkreettiset ohjeet brändisi AI-lukukelpoisuuden parantamiseen.
+                        Me olemme kumppanisi tässä. Mittaamme näkyvyyden, paljastamme kehityskohteet ja annamme konkreettiset ohjeet brändisi AI-lukukelpoisuuden parantamiseen.
                     </p>
 
                     <BookCalendar />
@@ -102,7 +102,7 @@ const SeoComparison: React.FC = () => {
                         <h2 className="text-2xl font-bold">SpotRank Boost</h2>
                     </div>
                     <p className="text-lg mb-12 text-subtle-light">
-                        Tekoälynäkyvyyden kasvun kumppanisi. Datavetoinen suunnitelman näkyvyyden kasvattamiseen.
+                        Tekoälynäkyvyyden kasvun kumppanisi. Datavetoinen suunnitelma näkyvyyden kasvattamiseen.
                         Räätälöity roadmap, tekoälyoptimoitu sisältöstrategia ja kuukausittaiset asiantuntijapalaverit pitävät brändisi jatkuvassa nousussa.
                     </p>
 
