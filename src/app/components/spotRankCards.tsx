@@ -67,7 +67,6 @@ export default function SpotRankCards({ openForm }: SpotRankCardsProps) {
                     features={card.features}
                     cta={card.cta}
                     ctaLink={card.ctaLink ?? ""}
-                    openForm={card.openForm ? (url) => openForm(url) : undefined}
                 />
             ))}
         </div>
