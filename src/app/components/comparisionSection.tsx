@@ -24,10 +24,10 @@ const oldWaySteps: Step[] = [
 
 // Data "Uusi tapa" -listalle
 const newWaySteps: NewWayStep[] = [
-    { id: 1, text: "Lähtötason auditointi" },
-    { id: 2, text: "Täsmällinen näkyvyyssuunnitelma" },
-    { id: 3, text: "Toteutetaan tekoälyoptimointi" },
-    { id: 4, text: "Seuranta ja jatkuva kasvu" },
+    { id: 1, text: "Baseline Audit" },
+    { id: 2, text: "Precise Visibility Plan" },
+    { id: 3, text: "AI Optimization Execution" },
+    { id: 4, text: "Monitoring and Continuous Growth" },
 ];
 
 
@@ -77,11 +77,12 @@ const SeoComparison: React.FC = () => {
                 {/* Vasen sarake */}
                 <div className="flex-1">
                     <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-8">
-                        AI-optimointi – <span className="font-playfair italic font-normal">kuin yrityksesi ylimääräinen myyjä</span>
+                        AI optimization – <span className="font-playfair italic font-normal">like having an extra salesperson</span>
                     </h2>
                     <p className="text-gray-700">
-                        AI-optimointi (AIO) on hakukoneoptimoinnin uusi vaihe. Se auttaa yrityksiä näkymään paremmin generatiivisissa hakupalveluissa.
-                        Me olemme kumppanisi tässä. Mittaamme näkyvyyden, paljastamme kehityskohteet ja annamme konkreettiset ohjeet brändisi AI-lukukelpoisuuden parantamiseen.
+                        AI Optimization (AIO) is the next evolution of search engine optimization.
+                        It helps companies increase their visibility across generative search platforms.<br /><br />We’re your partner in this new era.
+                        We measure your AI visibility, uncover areas for improvement, and provide clear, actionable steps to enhance your brand’s AI readability.
                     </p>
 
                     <BookCalendar />
@@ -102,8 +103,9 @@ const SeoComparison: React.FC = () => {
                         <h2 className="text-2xl font-bold">SpotRank Boost</h2>
                     </div>
                     <p className="text-lg mb-12 text-subtle-light">
-                        Tekoälynäkyvyyden kasvun kumppanisi. Datavetoinen suunnitelma näkyvyyden kasvattamiseen.
-                        Räätälöity roadmap, tekoälyoptimoitu sisältöstrategia ja kuukausittaiset asiantuntijapalaverit pitävät brändisi jatkuvassa nousussa.
+                        Your partner in AI visibility growth.
+                        A data-driven plan to boost your brand’s presence.
+                        A tailored roadmap, an AI-optimized content strategy, and monthly expert sessions keep your brand on a steady upward trajectory.
                     </p>
 
                     {/* Askelten listaus */}
@@ -118,7 +120,7 @@ const SeoComparison: React.FC = () => {
                         <button
                             onClick={() => (window.location.href = 'https://buy.stripe.com/eVq3cvcWbdpe9gkaIDe3e01')}
                             type="button" className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
-                            Aloita kasvu
+                            Start Growth
                         </button>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ const CalendarModalButton = () => {
                 onClick={() => setIsOpen(true)}
                 className="bg-primary text-white font-bold py-3 mt-6 px-6 rounded-lg hover:opacity-90 transition"
             >
-                Varaa demo
+                Book Demo
             </button>
 
             {isOpen && (

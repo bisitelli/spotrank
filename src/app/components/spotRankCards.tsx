@@ -5,13 +5,13 @@ const cards = [
         title: "SpotRank",
         price: "199€",
         description:
-            "Saat nopeasti käsityksen yrityksesi näkyvyydestä tekoälyhauissa ja hakukoneissa.",
+            "Get a quick understanding of your company’s visibility across AI searches and traditional search engines.",
         features: [
-            "Oman yrityksen näkyvyysanalyysi",
-            "Keskeiset vahvuudet ja kehityskohteet",
-            "Yhteenveto ja suositukset seuraavista askelista",
+            "Your company visibility analysis",
+            "Key strengths and areas for improvement",
+            "Summary and recommendations for next steps",
         ],
-        cta: "Aloita nyt",
+        cta: "Start Now",
         ctaLink: "https://buy.stripe.com/4gM00j4pF70Qbos6sne3e02"
 
     },
@@ -19,15 +19,15 @@ const cards = [
         title: "SpotRank Rival",
         price: "499€",
         description:
-            "Vertaa yrityksesi näkyvyyttä kilpailijoihin ja selvitä, missä he menestyvät paremmin sekä missä sinulla on kilpailuetua.",
+            "Compare your visibility with competitors and discover where they shine — and where you have the edge.",
         features: [
-            "Oman yrityksen näkyvyysanalyysi",
-            "3 kilpailijan näkyvyys ja vahvuudet",
-            "Vertailu: missä kilpailijat pärjäävät paremmin",
-            "Tunnistetut erot ja kehityskohteet",
-            "Toimenpide-ehdotukset kilpailuedun saavuttamiseksi",
+            "Visibility analysis for your company",
+            "Visibility and strengths of three competitors",
+            "Comparison: where competitors perform better",
+            "Identified differences and opportunities for improvement",
+            "Recommended actions to gain a competitive edge",
         ],
-        cta: "Aloita nyt",
+        cta: "Start Now",
         ctaLink: "https://buy.stripe.com/cNi7sL6xNeti8cg5oje3e00"
 
 
@@ -36,17 +36,17 @@ const cards = [
         title: "SpotRank Boost",
         price: "1999€",
         description:
-            "Henkilökohtainen suunnitelma ja suositukset näkyvyyden parantamiseksi tekoälyalustoilla ja hakukoneissa.",
+            "A personalized plan and expert recommendations to improve your visibility across AI platforms and search engines.",
         features: [
-            "Oman yrityksen näkyvyysanalyysi",
-            "6 kilpailijan näkyvyys ja vahvuudet",
-            "Syvävertailu näkyvyydestä ja eroista",
-            "Räätälöity näkyvyyden kehittämissuunnitelma",
-            "Optimointi tekoäly- ja hakunäkyvyydelle",
-            "Seuranta- ja kick off palaverit",
-            "Quick Win -suositukset ja selkeä roadmap",
+            "Visibility analysis for your company",
+            "Visibility and strengths of six competitors",
+            "In-depth comparison of performance and differences",
+            "Tailored visibility improvement plan",
+            "Optimization for AI and search visibility",
+            "Follow-up and kick-off meetings",
+            "Quick Win -recommendations and a clear roadmap",
         ],
-        cta: "Aloita nyt",
+        cta: "Start Now",
         ctaLink: "https://buy.stripe.com/eVq3cvcWbdpe9gkaIDe3e01"
     },
 ];

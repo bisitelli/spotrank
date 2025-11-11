@@ -49,7 +49,7 @@ export default function LandingPage() {
           <div className="relative inline-block">
             <button className="hidden md:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity"
               onClick={() => setShowEmail(!showEmail)}>
-              Ota yhteyttä
+              Contact Us
             </button>
 
             <button className="md:hidden p-2 rounded-lg hover:bg-primary/20"
@@ -76,10 +76,10 @@ export default function LandingPage() {
         <div className="flex flex-col items-center gap-12 text-center">
           <div className="flex flex-col gap-6 items-center">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
-              Näy paremmin tekoälylle <br /> <span className="text-primary">SpotRank</span>in avulla
+              Boost Your AI Visibility<br /> with <span className="text-primary">SpotRank</span>
             </h1>
             <p className="text-lg md:text-xl text-subtle-light max-w-3xl">
-              Testaa yrityksesi näkyvyys veloituksetta – ja selvitä, kuinka todennäköisesti ChatGPT, Google ja muut AI-hakukoneet suosittelevat brändiäsi.
+              Test your company’s AI visibility for free — and discover how likely ChatGPT, Google, and other AI search engines are to recommend your brand.
             </p>
           </div>
 
@@ -96,12 +96,12 @@ export default function LandingPage() {
                 type="text"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                placeholder="Syötä yrityksesi URL"
+                placeholder="Enter your company’s URL"
                 className="flex-1 border-none bg-transparent text-foreground-light focus:outline-none focus:ring-0 text-base px-2 py-2"
               />
 
               <button type="button" onClick={handleStart} disabled={!url} className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
-                Aloita nyt
+                Test Now
               </button>
             </form>
           </div>
@@ -117,9 +117,9 @@ export default function LandingPage() {
         <div className="mt-8 md:mt-12 mb-16">
           <div className="flex flex-col justify-between h-full gap-12">
             <div className="flex flex-col gap-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vie näkyvyytesi seuraavalle tasolle</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Take your visibility to the next level</h2>
               <p className="text-lg text-subtle-light max-w-1xl mx-auto">
-                SpotRank yhdistää älykkäät työkalut, joilla kehität näkyvyyttäsi tekoälyssä ja erotut kilpailijoista.
+                SpotRank combines intelligent tools that help you strengthen your AI presence<br /> and stand out from the competition.
               </p>
             </div>
           </div>

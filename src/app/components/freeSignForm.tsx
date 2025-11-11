@@ -42,15 +42,14 @@ export default function FreeSignForm({
             });
 
             setMessageType("success");
-            setMessage("Tiedot lähetetty onnistuneesti!\nSivustosi analyysi toimitetaan sähköpostiisi pian.");
+            setMessage("Success! Your information has been submitted — you’ll receive your website analysis by email soon.");
             setTimeout(() => {
                 onClose();
-            }, 2000);
+            }, 5000);
         } catch (error) {
-            console.error("Google Sheets -virhe:", error);
             setMessageType("error");
-            setMessage("Tapahtui virhe. Yritä uudelleen.");
-            setTimeout(() => setMessage(""), 3000);
+            setMessage("Something went wrong. Try again.");
+            setTimeout(() => setMessage(""), 5000);
         } finally {
             setLoading(false);
         }
@@ -73,7 +72,7 @@ export default function FreeSignForm({
                     {url ? (
                         <>
                             <span className="block text-gray-900 text-xl mb-1">
-                                Syötä tietosi
+                                Enter your details
                             </span>
                         </>
                     ) : (
@@ -94,7 +93,7 @@ export default function FreeSignForm({
                     {/* URL-input näkyy jos se on tyhjä tai haluat antaa mahdollisuuden muuttaa sitä */}
                     <input
                         type="text"
-                        placeholder="Yrityksen URL"
+                        placeholder="Your company URL"
                         value={safeUrl}
                         onChange={(e) => setUrl(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
@@ -102,14 +101,14 @@ export default function FreeSignForm({
 
                     <input
                         type="email"
-                        placeholder="Sähköposti"
+                        placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                     <input
                         type="tel"
-                        placeholder="Puhelin"
+                        placeholder="Phone"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
@@ -119,7 +118,7 @@ export default function FreeSignForm({
                         disabled={loading}
                         className="w-full px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark disabled:opacity-50 transition"
                     >
-                        {loading ? "Lähetetään..." : "Lähetä"}
+                        {loading ? "Sending..." : "Send"}
                     </button>
                 </form>
                 <div className="flex items-center gap-1 mt-4">

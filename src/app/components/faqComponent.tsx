@@ -2,29 +2,29 @@ import { useState } from "react";
 
 const faqs = [
     {
-        question: "Miten SpotRank analysoi verkkosivusi?",
-        answer: "SpotRankin tarkastelee yrityksesi näkyvyyttä suurimmilla tekoälyalustoilla ja hakukoneissa. Se arvioi, miten hyvin sisältösi, metatiedot ja sivuston rakenne tukevat löydettävyyttä, ja antaa konkreettisia ehdotuksia näkyvyyden parantamiseksi."
+        question: "How does SpotRank analyze your website?",
+        answer: "SpotRank evaluates your company’s visibility across major AI platforms and search engines. It assesses how well your content, metadata, and site structure support discoverability — and provides concrete recommendations to improve your visibility."
     },
     {
-        question: "Miksi tekoälyhakuoptimointi on tärkeää yritykselleni?",
-        answer: "Tekoälyhaut yleistyvät nopeasti, ja yhä useampi asiakas löytää palvelut AI-alustojen ja hakukoneiden kautta. Optimoimalla näkyvyytesi näissä hauissa voit varmistaa, että yrityksesi löytyy oikeissa yhteyksissä, houkutella lisää asiakkaita ja saada kilpailuetua markkinoilla."
+        question: "Why is AI search optimization important for my business?",
+        answer: "AI-driven searches are growing rapidly, and more customers are discovering products and services through AI platforms and search engines. By optimizing your visibility in these environments, you ensure your business appears in the right contexts, attracts more customers, and gains a competitive advantage."
     },
     {
-        question: "Voiko tekoälyhakuoptimointi parantaa näkyvyyttäni?",
-        answer: "Kyllä! Annamme konkreettisia suosituksia, joilla voit parantaa sisältöäsi ja sivustosi rakennetta. Näin varmistat, että yrityksesi löytyy helpommin AI-alustoilta ja hakukoneista, mikä lisää potentiaalisten asiakkaiden määrää."
+        question: "Can AI search optimization improve my visibility?",
+        answer: "Yes! We provide practical recommendations to enhance your content and site structure, ensuring your business is easier to find across AI platforms and search engines — increasing your reach and potential customer base."
     },
     {
-        question: "Miten kilpailijoiden näkyvyys vaikuttaa minun yritykseeni?",
-        answer: "Kilpailijoiden analyysi paljastaa, missä he menestyvät paremmin ja missä sinulla on mahdollisuus erottua. Näin voit kohdentaa toimenpiteesi sinne, missä niistä on suurin vaikutus näkyvyyteen ja asiakashankintaan."
+        question: "How does competitor visibility affect my business?",
+        answer: "Competitor analysis reveals where others perform better — and where you have the opportunity to stand out. This helps you focus your actions where they’ll have the greatest impact on visibility and customer acquisition."
     },
     {
-        question: "Miten voin tavoittaa oikeat asiakkaat oikeassa paikassa?",
-        answer: "SpotRank mahdollistaa kohdennetun analyysin maittain ja kielittäin. Näin varmistat, että yrityksesi näkyy juuri niillä markkinoilla ja kohderyhmillä, joilla sillä on suurin vaikutus ja tuotto."
+        question: "How can I reach the right customers in the right markets?",
+        answer: "SpotRank enables targeted analysis by country and language, ensuring your business appears in the most relevant markets and audiences — where visibility drives the highest impact and return."
     },
     {
-        question: "Kuinka voin varmistaa, että näkyvyyteni kehittyy jatkuvasti?",
-        answer: "Säännöllinen seuranta auttaa tunnistamaan nopeasti, mikä toimii ja missä on parannettavaa. SpotRankin avulla näet näkyvyyden kehityksen reaaliajassa ja voit reagoida ennen kuin kilpailijat ehtivät ohittaa sinut."
-    },
+        question: "How can I ensure my visibility keeps improving?",
+        answer: "Regular tracking helps identify what works and what needs attention. With SpotRank, you can monitor visibility development in real time and act before competitors overtake you."
+    }
 ];
 
 export default function FAQ() {
