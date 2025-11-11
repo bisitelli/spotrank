@@ -3,7 +3,7 @@ import SpotRankCard from "./spotRankCard";
 const cards = [
     {
         title: "SpotRank",
-        price: "0€",
+        price: "199€",
         description:
             "Saat nopeasti käsityksen yrityksesi näkyvyydestä tekoälyhauissa ja hakukoneissa.",
         features: [
@@ -12,7 +12,7 @@ const cards = [
             "Yhteenveto ja suositukset seuraavista askelista",
         ],
         cta: "Aloita nyt",
-        openForm: true,
+        ctaLink: "https://buy.stripe.com/4gM00j4pF70Qbos6sne3e02"
 
     },
     {
