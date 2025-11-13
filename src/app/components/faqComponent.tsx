@@ -2,30 +2,37 @@ import { useState } from "react";
 
 const faqs = [
     {
-        question: "How does SpotRank analyze your website?",
-        answer: "SpotRank evaluates your company’s visibility across major AI platforms and search engines. It assesses how well your content, metadata, and site structure support discoverability — and provides concrete recommendations to improve your visibility."
+        question: "How does SpotRank analyze my website?",
+        answer:
+            "SpotRank uses six specialized AI agents to evaluate how clearly your website can be understood, navigated, and used by modern AI systems. Our analysis covers data clarity, schema quality, technical readability, content structure, actionability, and how likely AI systems are to recommend your brand."
     },
     {
-        question: "Why is AI search optimization important for my business?",
-        answer: "AI-driven searches are growing rapidly, and more customers are discovering products and services through AI platforms and search engines. By optimizing your visibility in these environments, you ensure your business appears in the right contexts, attracts more customers, and gains a competitive advantage."
+        question: "What exactly do your AI agents measure?",
+        answer:
+            "Each agent focuses on a different part of AI readiness: click-path efficiency, data consistency, schema completeness, technical accessibility, content clarity, and recommendation strength. Together, they reveal how AI interprets your site and where improvement is needed."
     },
     {
-        question: "Can AI search optimization improve my visibility?",
-        answer: "Yes! We provide practical recommendations to enhance your content and site structure, ensuring your business is easier to find across AI platforms and search engines — increasing your reach and potential customer base."
+        question: "Why is AI readiness important for my business?",
+        answer:
+            "AI systems are becoming the primary way customers discover and decide between businesses. If AI cannot read your site, extract key information, or complete basic tasks, it simply won’t recommend you — even if you offer the best service."
     },
     {
-        question: "How does competitor visibility affect my business?",
-        answer: "Competitor analysis reveals where others perform better — and where you have the opportunity to stand out. This helps you focus your actions where they’ll have the greatest impact on visibility and customer acquisition."
+        question: "What kind of improvements does SpotRank recommend?",
+        answer:
+            "You’ll receive a prioritized list of improvements, such as shortening the buying path, fixing missing business data, improving schema markup, restructuring unclear content, or removing technical blockers like pop-ups and JS-only rendering."
     },
     {
-        question: "How can I reach the right customers in the right markets?",
-        answer: "SpotRank enables targeted analysis by country and language, ensuring your business appears in the most relevant markets and audiences — where visibility drives the highest impact and return."
+        question: "Do you compare my website to competitors?",
+        answer:
+            "Yes. SpotRank benchmarks your AI readiness against your competitors to reveal where they outperform you, and where you already have an advantage. This helps you understand which changes provide the biggest competitive gain."
     },
     {
-        question: "How can I ensure my visibility keeps improving?",
-        answer: "Regular tracking helps identify what works and what needs attention. With SpotRank, you can monitor visibility development in real time and act before competitors overtake you."
+        question: "How do I know if my website is improving over time?",
+        answer:
+            "Your dashboard tracks readiness scores, agent results, and key improvements over time. You can quickly see what has improved, what still needs attention, and how changes affect your AI performance on a monthly basis."
     }
 ];
+
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);

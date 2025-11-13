@@ -38,7 +38,7 @@ export default function FreeSignForm({
             const res = await fetch("/api/leads", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ url: safeUrl, email, phone }),
+                body: JSON.stringify({ url: safeUrl, email, phone, tag: "websiteTest" }),
             });
 
             setMessageType("success");

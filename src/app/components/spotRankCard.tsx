@@ -49,8 +49,8 @@ export default function SpotRankCard({
 
                 <ul className="mt-2 flex flex-col gap-2 text-sm text-muted-light dark:text-muted-dark">
                     {features.map((f, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                            <CheckCircle className="size-4 text-primary mt-[2px]" />
+                        <li key={i} className="flex items-center gap-2">
+                            <CheckCircle className="size-4 text-primary flex-shrink-0" />
                             <span>{f}</span>
                         </li>
                     ))}

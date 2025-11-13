@@ -77,10 +77,10 @@ export default function LandingPage() {
         <div className="flex flex-col items-center gap-12 text-center">
           <div className="flex flex-col gap-6 items-center">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
-              Boost Your AI Visibility<br /> with <span className="text-primary">SpotRank</span>
+              Boost Your AI Readiness<br /> with <span className="text-primary">SpotRank</span>
             </h1>
-            <p className="text-lg md:text-xl text-subtle-light max-w-3xl">
-              Test your company’s AI visibility for free — and discover how likely ChatGPT, Google, and other AI search engines are to recommend your brand.
+            <p className="text-lg md:text-xl text-subtle-light max-w-2xl">
+              Test your company’s AI visibility for free — and see how likely today’s AI systems are to recommend your brand.
             </p>
           </div>
 
@@ -118,9 +118,9 @@ export default function LandingPage() {
         <div className="mt-8 md:mt-12 mb-16">
           <div className="flex flex-col justify-between h-full gap-12">
             <div className="flex flex-col gap-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Take your visibility to the next level</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Prepare Your Website for the AI Era</h2>
               <p className="text-lg text-subtle-light max-w-1xl mx-auto">
-                SpotRank combines intelligent tools that help you strengthen your AI presence<br /> and stand out from the competition.
+                SpotRank uses smart diagnostics and optimization tools <br /> to make your site truly AI-friendly and outperform competitors.
               </p>
             </div>
           </div>

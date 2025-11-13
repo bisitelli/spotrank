@@ -3,7 +3,7 @@ import { google } from "googleapis";
 
 export async function POST(req: NextRequest) {
     try {
-        const { url, email, phone } = await req.json();
+        const { url, email, phone, tag } = await req.json();
 
         if (!url || !email || !phone) {
             return NextResponse.json({ error: "URL ja sähköposti ovat pakollisia." }, { status: 400 });
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
             valueInputOption: "USER_ENTERED",
             requestBody: {
                 values: [
-                    [url, email, phone]
+                    [url, email, phone, tag]
                 ],
             },
         });

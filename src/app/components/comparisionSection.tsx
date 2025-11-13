@@ -24,8 +24,8 @@ const oldWaySteps: Step[] = [
 
 // Data "Uusi tapa" -listalle
 const newWaySteps: NewWayStep[] = [
-    { id: 1, text: "Baseline Audit" },
-    { id: 2, text: "Precise Visibility Plan" },
+    { id: 1, text: "AI Readiness Audit" },
+    { id: 2, text: "Clear AI Readiness Plan" },
     { id: 3, text: "AI Optimization Execution" },
     { id: 4, text: "Monitoring and Continuous Growth" },
 ];
@@ -80,9 +80,9 @@ const SeoComparison: React.FC = () => {
                         AI optimization – <span className="font-playfair italic font-normal">like having an extra salesperson</span>
                     </h2>
                     <p className="text-gray-700">
-                        AI Optimization (AIO) is the next evolution of search engine optimization.
-                        It helps companies increase their visibility across generative search platforms.<br /><br />We’re your partner in this new era.
-                        We measure your AI visibility, uncover areas for improvement, and provide clear, actionable steps to enhance your brand’s AI readability.
+                        AI Readiness (AIR) is the next evolution beyond traditional SEO. It focuses not just on visibility — but on how well your website can be understood, used, and navigated by AI systems. <br /> <br />
+                        In the AI-first era, search engines, assistants, and autonomous agents don’t simply read your page, they interact with them. We help you prepare for this shift. <br /> <br />
+                        We analyze how AI interprets your website, identify hidden blockers, and provide clear, actionable steps to improve your site’s AI clarity, structure, and usability — so modern AI systems can actually understand and operate it.
                     </p>
 
                     <BookCalendar />
@@ -103,9 +103,7 @@ const SeoComparison: React.FC = () => {
                         <h2 className="text-2xl font-bold">SpotRank Boost</h2>
                     </div>
                     <p className="text-lg mb-12 text-subtle-light">
-                        Your partner in AI visibility growth.
-                        A data-driven plan to boost your brand’s presence.
-                        A tailored roadmap, an AI-optimized content strategy, and monthly expert sessions keep your brand on a steady upward trajectory.
+                        <span className='font-bold'>Your partner in AI readiness growth.</span> A data-driven plan to ensure your website works smoothly for modern AI systems. A tailored roadmap,     AI-ready optimizations, and monthly expert sessions keep your digital presence future-proof and performing.
                     </p>
 
                     {/* Askelten listaus */}
@@ -116,7 +114,7 @@ const SeoComparison: React.FC = () => {
                     </div>
 
                     {/* Lomake/CTA-alue */}
-                    <div className="w-full max-w-2xl mt-12">
+                    <div className="w-full max-w-2xl mt-18">
                         <button
                             onClick={() => (window.location.href = 'https://buy.stripe.com/eVq3cvcWbdpe9gkaIDe3e01')}
                             type="button" className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
