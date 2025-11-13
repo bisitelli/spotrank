@@ -52,7 +52,7 @@ const StepItem: React.FC<{ step: Step | NewWayStep; isNewWay: boolean }> = ({ st
     return (
         <div className="flex items-start mb-4 relative">
             {step.id < (isNewWay ? newWaySteps.length : oldWaySteps.length) && (
-                <div className={`absolute left-5 top-0 w-0.5 h-full transform translate-y-2 ${lineColor}`}></div>
+                <div className={`absolute left-5 top-2 w-0.5 h-full transform translate-y-2 ${lineColor}`}></div>
             )}
 
 

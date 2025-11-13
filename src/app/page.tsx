@@ -8,6 +8,7 @@ import SpotRankCards from "../app/components/spotRankCards";
 import ComparisionSection from "./components/comparisionSection";
 import FreeSignForm from "./components/freeSignForm"
 import FreeSignFormNoUrl from "./components/freeSignFormNoUrl"
+import ScrollSection from "./components/scrollSection"
 
 
 
@@ -20,14 +21,14 @@ export default function LandingPage() {
   const [formUrl, setFormUrl] = useState("");
 
   const openForm = (url: string) => {
-  setFormUrl(url);
-  setShowCardForm(true);
-};
+    setFormUrl(url);
+    setShowCardForm(true);
+  };
 
   const handleStart = () => {
     if (url.trim()) setShowHeroForm(true);
   }
-  
+
 
 
   const [showEmail, setShowEmail] = useState(false);
@@ -128,10 +129,13 @@ export default function LandingPage() {
         <SpotRankCards openForm={() => setShowCardForm(true)} />
 
         {showCardForm && <FreeSignFormNoUrl onClose={() => setShowCardForm(false)} />}
-        
+
+        <ScrollSection />
 
 
-        <FaqComponent />
+        <div className="-mt-40 relative z-[10]">
+          <FaqComponent />
+        </div>
 
         {/* Explainer Video
         <div className="flex flex-col items-center gap-6">
