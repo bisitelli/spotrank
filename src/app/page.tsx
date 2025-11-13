@@ -126,7 +126,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <SpotRankCards openForm={() => setShowCardForm(true)} />
+        <SpotRankCards />
 
         {showCardForm && <FreeSignFormNoUrl onClose={() => setShowCardForm(false)} />}
 
