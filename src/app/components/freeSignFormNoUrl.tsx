@@ -36,14 +36,13 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
             }
 
             setMessageType("success");
-            setMessage("Tiedot lähetetty onnistuneesti!\nSivustosi analyysi toimitetaan sähköpostiisi pian.");
+            setMessage("Success! You’re now on the early access list for the SpotRank Dashboard.");
             setTimeout(() => {
                 onClose();
             }, 2000);
         } catch (error) {
-            console.error("Google Sheets -virhe:", error);
             setMessageType("error");
-            setMessage("Tapahtui virhe. Yritä uudelleen.");
+            setMessage("Something went wrong. Try again.");
             setTimeout(() => setMessage(""), 3000);
         } finally {
             setLoading(false);
@@ -67,7 +66,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                 </button>
 
                 <h2 className="text-xl font-semibold text-center mb-4 text-black">
-                    Syötä tietosi
+                    Join the waitlist
                 </h2>
 
                 {message && (
