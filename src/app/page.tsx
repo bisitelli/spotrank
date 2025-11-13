@@ -9,6 +9,7 @@ import ComparisionSection from "./components/comparisionSection";
 import FreeSignForm from "./components/freeSignForm"
 import FreeSignFormNoUrl from "./components/freeSignFormNoUrl"
 import ScrollSection from "./components/scrollSection"
+import WhatWeMeasure from "./components/whatWeMeasure";
 
 
 
@@ -113,6 +114,8 @@ export default function LandingPage() {
         <LogoStrip />
 
         <ComparisionSection />
+
+        <WhatWeMeasure />
 
         {/* Features */}
         <div className="mt-8 md:mt-12 mb-16">
