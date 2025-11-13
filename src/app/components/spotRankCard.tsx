@@ -6,8 +6,7 @@ type SpotRankCardProps = {
     description: string;
     features: string[];
     cta: string;
-    ctaLink?: string
-    openForm?: (url: string) => void;
+    ctaLink: string
 };
 
 export default function SpotRankCard({
@@ -16,8 +15,7 @@ export default function SpotRankCard({
     description,
     features,
     cta,
-    ctaLink,
-    openForm
+    ctaLink
 }: SpotRankCardProps) {
 
 
@@ -61,16 +59,16 @@ export default function SpotRankCard({
 
             {/* CTA */}
             <div className="mt-12">
-                <button onClick={() => {
-                    if (openForm) {
-                        openForm(""); // avaa FreeSignForm tyhjällä URLilla
-                    } else if (ctaLink) {
-                        window.location.href = ctaLink; // Stripe-linkki
-                    }
-                }} className="w-full rounded-lg bg-primary text-white font-medium py-2.5 hover:bg-primary/90 transition-colors">
+                <button
+                    onClick={() => {
+                        if (!ctaLink) return; // tai näytä virheilmoitus
+                        window.location.href = ctaLink;
+                    }}
+                    className="w-full rounded-lg bg-primary text-white font-medium py-2.5 hover:bg-primary/90 transition-colors cursor-pointer"
+                >
                     {cta}
                 </button>
             </div>
-        </div>
+        </div >
     );
 }

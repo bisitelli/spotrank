@@ -81,7 +81,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     <input
                         type="text"
-                        placeholder="Yrityksen URL"
+                        placeholder="Your company URL"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
@@ -89,14 +89,14 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
 
                     <input
                         type="email"
-                        placeholder="Sähköposti"
+                        placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                     <input
                         type="tel"
-                        placeholder="Puhelin"
+                        placeholder="Phone"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
@@ -106,7 +106,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                         disabled={loading}
                         className="w-full px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark disabled:opacity-50 transition"
                     >
-                        {loading ? "Joining..." : "Join Waitlist"}
+                        {loading ? "Joining..." : "Join"}
                     </button>
                 </form>
 

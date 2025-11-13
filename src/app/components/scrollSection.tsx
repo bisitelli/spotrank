@@ -7,7 +7,7 @@ import FreeSignFormNoUrl from "./freeSignFormNoUrl";
 export function ScrollSection() {
     const [open, setOpen] = React.useState(false);
     return (
-        <div className="flex flex-col overflow-hidden -mt-20">
+        <div className="flex flex-col overflow-hidden">
             <ContainerScroll
                 titleComponent={
                     <>

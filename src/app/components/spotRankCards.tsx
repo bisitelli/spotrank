@@ -51,11 +51,8 @@ const cards = [
     },
 ];
 
-type SpotRankCardsProps = {
-    openForm: (url: string) => void;
-};
 
-export default function SpotRankCards({ openForm }: SpotRankCardsProps) {
+export default function SpotRankCards(){
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mt-12">
             {cards.map((card, i) => (
@@ -66,7 +63,7 @@ export default function SpotRankCards({ openForm }: SpotRankCardsProps) {
                     description={card.description}
                     features={card.features}
                     cta={card.cta}
-                    ctaLink={card.ctaLink ?? ""}
+                    ctaLink={card.ctaLink}
                 />
             ))}
         </div>

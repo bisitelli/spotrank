@@ -63,7 +63,7 @@ export default function FreeSignForm({
                 <button
                     onClick={onClose}
                     className="absolute top-1 right-5 text-gray-400 hover:text-gray-700 text-4xl"
-                    aria-label="Sulje"
+                    aria-label="Close"
                 >
                     ×
                 </button>
