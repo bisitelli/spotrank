@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>SpotRank - Boost Your AI Visibility</title>
+        <title>SpotRank - Boost Your AI Readiness</title>
         <meta name="description" content="Boost your AI Visibility" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
