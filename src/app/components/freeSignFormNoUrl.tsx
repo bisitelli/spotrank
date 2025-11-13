@@ -106,7 +106,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                         disabled={loading}
                         className="w-full px-4 py-2 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark disabled:opacity-50 transition"
                     >
-                        {loading ? "Lähetetään..." : "Lähetä"}
+                        {loading ? "Joining..." : "Join Waitlist"}
                     </button>
                 </form>
 
