@@ -4,7 +4,6 @@
 import './globals.css';
 import { ReactNode } from 'react';
 import Script from 'next/script';
-import Head from 'next/head';
 
 
 
@@ -25,6 +24,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RXSYXM3R6P"
+          strategy="afterInteractive"
+        />
+
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RXSYXM3R6P');
+          `}
+        </Script>
       </head>
       <body>
         {children}
