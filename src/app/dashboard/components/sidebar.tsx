@@ -5,9 +5,11 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
     Home,
-    BarChart2,
-    Smile,
-    List,
+    HatGlasses,
+    MousePointerClick,
+    Database,
+    Eye,
+    ScrollText,
     Lightbulb,
     Settings,
 } from "lucide-react";
@@ -15,10 +17,12 @@ import Link from "next/link";
 
 const navItems = [
     { name: "Overview", href: "/dashboard", icon: Home },
-    { name: "Visibility Metrics", href: "/dashboard/metrics", icon: BarChart2 },
-    { name: "Sentiment Analysis", href: "/dashboard/sentiment", icon: Smile },
-    { name: "Prompt Tracking", href: "/dashboard/prompts", icon: List },
-    { name: "Recommendations", href: "/dashboard/recommendations", icon: Lightbulb },
+    { name: "Agent Scores", href: "/dashboard/agent-scores", icon: HatGlasses },
+    { name: "Click-Path Analysis", href: "/dashboard/click-path-analysis", icon: MousePointerClick },
+    { name: "Data & Schema Health", href: "/dashboard/data-and-schema-health", icon: Database },
+    { name: "Technical Readabilitiy", href: "/dashboard/technical-readabilitiy", icon: Eye },
+    { name: "Content Clarity", href: "/dashboard/content-clarity", icon: ScrollText },
+    { name: "AI Recommendations", href: "/dashboard/AI-recommendations", icon:  Lightbulb},
 ];
 
 export default function Sidebar() {
