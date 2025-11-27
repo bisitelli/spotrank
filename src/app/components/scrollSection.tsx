@@ -11,7 +11,7 @@ export function ScrollSection() {
             <ContainerScroll
                 titleComponent={
                     <>
-                        <h1 className="text-4xl font-semibold text-black">
+                        <h1 className="text-4xl font-semibold text-white">
                             We're Building the Future of AI Visibility <br />
                             <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
                                 Get Early Access
@@ -21,7 +21,7 @@ export function ScrollSection() {
                 }
             >
                 <Image
-                    src="/screen2.png"
+                    src="/jsonss.png"
                     alt="hero"
                     height={720}
                     width={1400}

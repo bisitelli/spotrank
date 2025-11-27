@@ -5,7 +5,6 @@ import { useState } from "react";
 export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) {
     const [url, setUrl] = useState("");
     const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false);
 
     const [message, setMessage] = useState("");
@@ -15,8 +14,8 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!url || !email || !phone) {
-            alert("Täytä kaikki vaaditut kentät.");
+        if (!url || !email) {
+            alert("Fill all details");
             return;
         }
 
@@ -27,16 +26,16 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ url, email, phone }),
+                body: JSON.stringify({ url, email }),
             });
 
             if (!res.ok) {
                 const errorText = await res.text();
-                throw new Error(errorText || "Virhe lähetettäessä tietoja Google Sheetiin");
+                throw new Error(errorText || "Error");
             }
 
             setMessageType("success");
-            setMessage("Success! You’re now on the early access list for the SpotRank Dashboard.");
+            setMessage("Success! You’re now on the waitlist.");
             setTimeout(() => {
                 onClose();
             }, 2000);
@@ -65,7 +64,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                     ×
                 </button>
 
-                <h2 className="text-xl font-semibold text-center mb-4 text-black">
+                <h2 className="text-xl font-semibold text-center mb-4 text-white">
                     Join the waitlist
                 </h2>
 
@@ -94,13 +93,6 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     />
-                    <input
-                        type="tel"
-                        placeholder="Phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
                     <button
                         type="submit"
                         disabled={loading}
@@ -119,7 +111,7 @@ export default function FreeSignFormNoUrl({ onClose }: { onClose: () => void }) 
                             ></path>
                         </svg>
                     </div>
-                    <h2 className="text-xl font-bold">SpotRank</h2>
+                    <h2 className="text-xl font-bold text-white">SpotRank</h2>
                 </div>
             </div>
         </div>

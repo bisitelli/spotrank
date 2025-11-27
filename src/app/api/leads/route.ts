@@ -3,10 +3,10 @@ import { google } from "googleapis";
 
 export async function POST(req: NextRequest) {
     try {
-        const { url, email, phone, tag } = await req.json();
+        const { url, email, tag } = await req.json();
 
-        if (!url || !email || !phone) {
-            return NextResponse.json({ error: "URL ja sähköposti ovat pakollisia." }, { status: 400 });
+        if (!url || !email ) {
+            return NextResponse.json({ error: "Add all details" }, { status: 400 });
         }
 
         // Google Sheets autentikaatio
@@ -27,14 +27,14 @@ export async function POST(req: NextRequest) {
             valueInputOption: "USER_ENTERED",
             requestBody: {
                 values: [
-                    [url, email, phone, tag]
+                    [url, email, tag]
                 ],
             },
         });
 
-        return NextResponse.json({ message: "Lähetetty onnistuneesti!" });
+        return NextResponse.json({ message: "Success" });
     } catch (error: any) {
-        console.error("Google Sheets -virhe:", error.message);
-        return NextResponse.json({ error: "Virhe Google Sheets -integraatiossa." }, { status: 500 });
+        console.error("Error", error.message);
+        return NextResponse.json({ error: "Error" }, { status: 500 });
     }
 }

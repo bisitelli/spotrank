@@ -33,11 +33,11 @@ export default function LogoStrip() {
                                     mask: `url(${logo.src}) no-repeat center`,
                                     WebkitMaskSize: "contain",
                                     maskSize: "contain",
-                                    backgroundColor: "#000",
+                                    backgroundColor: "#fff",
                                     transition: "background-color 0.3s",
                                 }}
-                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = logo.color ?? "#000")}
-                                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#000")}
+                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = logo.color ?? "#fff")}
+                                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#fff")}
                             />
                         </div>
                     ))}

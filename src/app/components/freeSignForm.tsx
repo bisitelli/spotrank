@@ -11,7 +11,6 @@ export default function FreeSignForm({
 }) {
     const [url, setUrl] = useState(preFilledUrl);
     const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false);
 
     const [message, setMessage] = useState("");
@@ -28,8 +27,8 @@ export default function FreeSignForm({
 
 
 
-        if (!safeUrl || !email || !phone) {
-            alert("Täytä kaikki kentät: URL, sähköposti ja puhelin.");
+        if (!safeUrl || !email ) {
+            alert("Fill all details");
             return;
         }
 
@@ -38,11 +37,11 @@ export default function FreeSignForm({
             const res = await fetch("/api/leads", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ url: safeUrl, email, phone, tag: "websiteTest" }),
+                body: JSON.stringify({ url: safeUrl, email, tag: "waitlist" }),
             });
 
             setMessageType("success");
-            setMessage("Success! Your information has been submitted — you’ll receive your website analysis by email soon.");
+            setMessage("Success! Your information has been submitted to waitlist.");
             setTimeout(() => {
                 onClose();
             }, 5000);
@@ -68,15 +67,15 @@ export default function FreeSignForm({
                     ×
                 </button>
 
-                <h2 className="text-xl font-semibold text-center mb-4 text-black">
+                <h2 className="text-xl font-semibold text-center mb-4">
                     {url ? (
                         <>
-                            <span className="block text-gray-900 text-xl mb-1">
+                            <span className="block text-xl mb-1 text-white">
                                 Enter your details
                             </span>
                         </>
                     ) : (
-                        "Syötä vielä loput tiedot"
+                        "Fill all details"
                     )}
                 </h2>
 
@@ -106,13 +105,6 @@ export default function FreeSignForm({
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     />
-                    <input
-                        type="tel"
-                        placeholder="Phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
                     <button
                         type="submit"
                         disabled={loading}
@@ -127,7 +119,7 @@ export default function FreeSignForm({
                             <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
                         </svg>
                     </div>
-                    <h2 className="text-xl font-bold">SpotRank</h2>
+                    <h2 className="text-xl font-bold text-white">SpotRank</h2>
                 </div>
             </div>
         </div>

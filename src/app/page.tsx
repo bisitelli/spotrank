@@ -3,13 +3,11 @@
 import React from "react";
 import { useState } from "react";
 import LogoStrip from "../app/components/logoStrip";
-import FaqComponent from "../app/components/faqComponent";
-import SpotRankCards from "../app/components/spotRankCards";
-import ComparisionSection from "./components/comparisionSection";
 import FreeSignForm from "./components/freeSignForm"
 import FreeSignFormNoUrl from "./components/freeSignFormNoUrl"
 import ScrollSection from "./components/scrollSection"
 import WhatWeMeasure from "./components/whatWeMeasure";
+import { Globe } from 'lucide-react'
 
 
 
@@ -46,7 +44,7 @@ export default function LandingPage() {
                 <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
               </svg>
             </div>
-            <h2 className="text-xl font-bold">SpotRank</h2>
+            <h2 className="text-xl font-bold text-white">SpotRank</h2>
           </div>
           <div className="relative inline-block">
             <button className="hidden md:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity"
@@ -77,21 +75,19 @@ export default function LandingPage() {
       <main className="container mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col items-center gap-12 text-center">
           <div className="flex flex-col gap-6 items-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl">
-              Boost Your AI Readiness<br /> with <span className="text-primary">SpotRank</span>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter max-w-4xl text-white">
+              Make Your Website<br /> Fluent in <span className="text-primary">AI</span>
             </h1>
-            <p className="text-lg md:text-xl text-subtle-light max-w-2xl">
-              Test your company’s AI visibility for free — and see how likely today’s AI systems are to recommend your brand.
+            <p className="text-lg md:text-xl text-white max-w-2xl">
+              We are building the universal API layer for the Agent economy.<br /> Sign up to be the first to transform your site into an AI-native storefront.
             </p>
           </div>
 
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-xl">
             <form className="flex flex-col sm:flex-row w-full items-stretch sm:items-center gap-2 rounded-lg bg-white border border-border-light p-2 shadow-md">
 
               <div className="flex items-center px-2">
-                <svg className="text-subtle-light dark:text-subtle-dark" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-                </svg>
+                <Globe className="text-gray-500" />
               </div>
 
               <input
@@ -103,7 +99,7 @@ export default function LandingPage() {
               />
 
               <button type="button" onClick={handleStart} disabled={!url} className="flex-shrink-0 sm:w-auto cursor-pointer flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-sm hover:opacity-90 transition-opacity">
-                Test Now
+                Join Waitlist
               </button>
             </form>
           </div>
@@ -113,52 +109,44 @@ export default function LandingPage() {
 
         <LogoStrip />
 
-        <ComparisionSection />
-
-        <WhatWeMeasure />
+        {/* Explainer Video */}
+        <div className="flex flex-col items-center gap-6">
+          <div
+            className="relative w-full max-w-[1000px] aspect-video rounded-xl overflow-hidden shadow-lg group"
+            style={{
+              WebkitMaskImage: "linear-gradient(to bottom, black 30%, transparent 100%)",
+              maskImage: "linear-gradient(to bottom, black 30%, transparent 100%)",
+              backgroundColor: "#1f1f1f"
+            }}
+          >
+            <img
+              alt="Explainer video thumbnail"
+              className="absolute inset-0 w-full h-full object-cover"
+              src="/chatscreen1.png"
+            />
+          </div>
+        </div>
 
         {/* Features */}
-        <div className="mt-8 md:mt-12 mb-16">
+        <div className="-mt-44 -md:mt-48 mb-16">
           <div className="flex flex-col justify-between h-full gap-12">
             <div className="flex flex-col gap-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Prepare Your Website for the AI Era</h2>
-              <p className="text-lg text-subtle-light max-w-1xl mx-auto">
-                SpotRank uses smart diagnostics and optimization tools <br /> to make your site truly AI-friendly and outperform competitors.
+              <h2 className="text-3xl md:text-8xl font-bold tracking-tight text-white">Designed to Help You Do More With <span className="text-primary">AI Agents</span></h2>
+              <p className="text-lg text-white max-w-1xl mx-auto">
+                Webfront acts as the universal translator between your beautiful<br /> human-centric website and the raw data needs of AI.
               </p>
             </div>
           </div>
         </div>
 
-        <SpotRankCards />
+        <WhatWeMeasure />
 
         {showCardForm && <FreeSignFormNoUrl onClose={() => setShowCardForm(false)} />}
-
-        <ScrollSection />
-
-
-        <div className="-mt-40 relative z-[10]">
-          <FaqComponent />
+        <div className="-mt-40">
+          <ScrollSection />
         </div>
 
-        {/* Explainer Video
-        <div className="flex flex-col items-center gap-6">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Watch Our Explainer Video</h2>
-          <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
-            <img
-              alt="Explainer video thumbnail"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              src="/video-thumbnail.jpg"
-            />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <button className="flex items-center justify-center size-20 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
-                <svg fill="currentColor" height="40px" viewBox="0 0 256 256" width="40px" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        */}
+
       </main>
     </div>
   )

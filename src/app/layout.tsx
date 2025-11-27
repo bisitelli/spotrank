@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 extend: {
                   colors: {
                     primary: "#25aff4",
-                    "background-light": "#f5f7f8",
+                    "background-light": "#1f1f1f",
                     "foreground-light": "#111618",
                     "subtle-light": "#607c8a",
                     "border-light": "#dbe2e6",
