@@ -61,13 +61,12 @@ next-env.d.ts
 
 # Allow public assets (optional)
 !public/
-public/*
 
-# Allow src folder
+# Allow src folder itself
 !src/
 
-# Ignore everything inside src
-/src/*
+# Ignore everything inside src by default
+src/**
 
-# Allow only src/app
+# But allow everything inside src/app
 !src/app/**
