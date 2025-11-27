@@ -59,14 +59,15 @@ next-env.d.ts
 !postcss.config.js
 !tailwind.config.js
 
-# Allow public assets (optional)
+# Allow public folder
 !public/
+public/*
 
-# Allow src folder itself
+# Allow src folder
 !src/
 
 # Ignore everything inside src by default
 src/**
 
-# But allow everything inside src/app
+# Allow EVERYTHING inside src/app (API + components + routes)
 !src/app/**
