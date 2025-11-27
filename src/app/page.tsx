@@ -5,7 +5,7 @@ import { useState } from "react";
 import LogoStrip from "../app/components/logoStrip";
 import FreeSignForm from "./components/freeSignForm"
 import FreeSignFormNoUrl from "./components/freeSignFormNoUrl"
-import ScrollSection from "./components/scrollSection"
+import ScrollSection from "./components/scrollSectionNew"
 import WhatWeMeasure from "./components/whatWeMeasure";
 import { Globe } from 'lucide-react'
 
