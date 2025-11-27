@@ -70,4 +70,4 @@ public/*
 /src/*
 
 # Allow only src/app
-!src/app/
+!src/app/**
