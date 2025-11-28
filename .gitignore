@@ -50,6 +50,18 @@ next-env.d.ts
 # Ignore EVERYTHING
 /*
 
+# Allow public
+!/public/
+!/public/**
+
+# Allow src
+!/src/
+!/src/**
+
+# Do NOT ignore any files inside src/app
+!/src/app/
+!/src/app/**
+
 # Allow project config files
 !.gitignore
 !package.json
