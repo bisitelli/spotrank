@@ -128,7 +128,7 @@ export default function LandingPage() {
         </div>
 
         {/* Features */}
-        <div className="-mt-44 -md:mt-48 mb-16">
+        <div className="-mt-20 md:-mt-44 mb-16">
           <div className="flex flex-col justify-between h-full gap-12">
             <div className="flex flex-col gap-4 text-center">
               <h2 className="text-3xl md:text-8xl font-bold tracking-tight text-white">Designed to Help You Do More With <span className="text-primary">AI Agents</span></h2>
