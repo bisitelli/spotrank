@@ -5,8 +5,8 @@ import { useState } from "react";
 import LogoStrip from "../app/components/logoStrip";
 import FreeSignForm from "./components/freeSignForm"
 import FreeSignFormNoUrl from "./components/freeSignFormNoUrl"
-import ScrollSection from "./components/scrollSection"
 import WhatWeMeasure from "./components/whatWeMeasure";
+import ScrollSectionNew from "./components/scrollSectionNew";
 import { Globe } from 'lucide-react'
 
 
@@ -143,7 +143,7 @@ export default function LandingPage() {
 
         {showCardForm && <FreeSignFormNoUrl onClose={() => setShowCardForm(false)} />}
         <div className="-mt-40">
-          <ScrollSection />
+          <ScrollSectionNew />
         </div>
 
 
